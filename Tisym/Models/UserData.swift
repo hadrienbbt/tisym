@@ -24,11 +24,21 @@ struct UserData  {
             valueStore.bridgeIp = newValue
         }
     }
-    
+    #if os(iOS)
     let deviceName = UIDevice.current.name
+    #endif
+    #if os(watchOS)
+    let deviceName = "Watch"
+    #endif
+    
     
     init() {
         hueUser = valueStore.hueUser
         bridgeIp = valueStore.bridgeIp
+    }
+    
+    mutating func logout() {
+        bridgeIp = nil
+        hueUser = nil
     }
 }

@@ -15,7 +15,7 @@ struct HueError: Decodable, Error {
     
     init(_ description: String = "Unknown Error") {
         self.type = 0
-        self.address = ""
+        self.address = "hue error"
         self.description = description
     }
 }

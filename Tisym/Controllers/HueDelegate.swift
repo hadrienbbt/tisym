@@ -17,25 +17,23 @@ class HueDelegate: ObservableObject {
         }
     }
     @Published var loading = false
-    @Published var userData: UserData
-    
-    init(userData: UserData) {
-        loading = true
-        self.userData = userData
-        getBridgeIp { result in
-            switch result {
-            case .success():
-                if self.userData.hueUser != nil {
-                    self.userLoaded()
-                }
-            case .failure(let err): print("Error \(err)")
+    @Published var userData: UserData {
+        didSet {
+            if self.userData.bridgeIp == nil {
+                fetchBridge()
             }
         }
     }
     
-    func getBridgeIp(_ completion: @escaping (Result<Void,Error>) -> Void) {
+    init(userData: UserData) {
+        loading = true
+        self.userData = userData
+        fetchBridge()
+    }
+    
+    func fetchBridge() {
         if self.userData.bridgeIp != nil {
-            completion(.success(()))
+            self.onBridgeFound()
             return
         }
         Utils.httpRequest(endpoint: "https://discovery.meethue.com/", method: .get, params: nil) { result in
@@ -44,13 +42,20 @@ class HueDelegate: ObservableObject {
                 if let ip = dict["internalipaddress"] as? String {
                     DispatchQueue.main.async {
                         self.userData.bridgeIp = ip
-                        completion(.success(()))
+                        self.onBridgeFound()
                     }
                 } else {
-                    completion(.failure(HueError("Unable to find a bridge on the network")))
+                    print(HueError("Unable to find a bridge on the network"))
                 }
-            case .failure(let err): completion(.failure(err))
+            case .failure(let err): print("Error \(err)")
             }
+        }
+    }
+    
+    func onBridgeFound() {
+        print("Bridge foud: \(self.userData.bridgeIp!)")
+        if self.userData.hueUser != nil {
+            self.userLoaded()
         }
     }
     
@@ -64,7 +69,7 @@ class HueDelegate: ObservableObject {
         }
     }
     
-    func createUser(_ completion: @escaping (Result<String,Error>) -> Void) {
+    func createUser() {
         let url = "http://\(userData.bridgeIp!)/api"
         let params = ["devicetype": "Tisym#\(userData.deviceName)"]
         Utils.httpRequest(endpoint: url, method: .post, params: params) { result in
@@ -73,40 +78,33 @@ class HueDelegate: ObservableObject {
                 guard let success = res["success"] as? [String: Any],
                     let hueUser = success["username"] as? String
                 else {
-                    let error = HueError("Can't parse response to get username")
-                    completion(.failure(error))
+                    print(HueError("Can't parse response to get username"))
                     return
                 }
                 DispatchQueue.main.async {
                     self.userData.hueUser = hueUser
                     self.userLoaded()
                 }
-                completion(.success(hueUser))
-            case .failure(let err):
-                completion(Result.failure(err))
+            case .failure(let err): print(err)
             }
         }
     }
-    
+        
     func userLoaded() {
         print("Current user loaded: \(userData.hueUser!)")
-        getLights { lights in
-            DispatchQueue.main.async {
-                self.lights = self.createLights(from: lights)
-                self.loading = false
-            }
-        }
+        getLights()
     }
     
-    func getLights(_ callback: @escaping ([String: Any]) -> Void) {
+    func getLights() {
         let url = "http://\(userData.bridgeIp!)/api/\(userData.hueUser!)/lights"
         Utils.httpRequest(endpoint: url, method: .get, params: nil) { result in
             switch(result) {
-            case .success(let dict):
-                callback(dict)
-            case .failure(let err):
-                print(err)
-                callback([:])
+            case .success(let lights):
+                DispatchQueue.main.async {
+                    self.lights = self.createLights(from: lights)
+                    self.loading = false
+                }
+            case .failure(let err): print(err)
             }
             
         }

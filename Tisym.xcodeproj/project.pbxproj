@@ -25,9 +25,75 @@
 		487DFAB72424D7FC00163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
 		487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
 		487DFABD2424E90E00163D0C /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABC2424E90E00163D0C /* HueError.swift */; };
+		487DFAC52425512500163D0C /* Tisym_Watch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 487DFAC42425512500163D0C /* Tisym_Watch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		487DFACB2425512500163D0C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAC92425512500163D0C /* Interface.storyboard */; };
+		487DFACD2425512B00163D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFACC2425512B00163D0C /* Assets.xcassets */; };
+		487DFAD42425512B00163D0C /* Tisym_Watch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 487DFAD32425512B00163D0C /* Tisym_Watch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		487DFADB2425512B00163D0C /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFADA2425512B00163D0C /* HostingController.swift */; };
+		487DFADD2425512B00163D0C /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFADC2425512B00163D0C /* ExtensionDelegate.swift */; };
+		487DFADF2425512B00163D0C /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFADE2425512B00163D0C /* NotificationController.swift */; };
+		487DFAE12425512B00163D0C /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAE02425512B00163D0C /* NotificationView.swift */; };
+		487DFAE32425512D00163D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAE22425512D00163D0C /* Assets.xcassets */; };
+		487DFAE62425512D00163D0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAE52425512D00163D0C /* Preview Assets.xcassets */; };
+		487DFAF5242552CE00163D0C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF32423DEAD00F64BB4 /* Data.swift */; };
+		487DFAF7242552D400163D0C /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABC2424E90E00163D0C /* HueError.swift */; };
+		487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FFB242427C100F64BB4 /* SmartPlug.swift */; };
+		487DFAF9242552DE00163D0C /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
+		487DFAFA242552E300163D0C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
+		487DFAFB242552E700163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
+		487DFAFC242552EA00163D0C /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
+		487DFAFD242552ED00163D0C /* LightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEC2423D35A00F64BB4 /* LightList.swift */; };
+		487DFAFE242552F000163D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CEF724214BA500B9C272 /* ContentView.swift */; };
+		487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0724214C9700B9C272 /* HueDelegate.swift */; };
+		487DFB002425539100163D0C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0924214E1200B9C272 /* Utils.swift */; };
+		487DFB012425539500163D0C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
+		487DFB022425539800163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
+		487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487EFD562425695F0002DFB0 /* ContextMenu.swift */; };
 		48DAB2F92424B9DE00C3F073 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
 		48FD66372422B23800EA2FA4 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		487DFAC62425512500163D0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4814CEE824214BA500B9C272 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 487DFAC32425512500163D0C;
+			remoteInfo = "Tisym_Watch WatchKit App";
+		};
+		487DFAD52425512B00163D0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4814CEE824214BA500B9C272 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 487DFAD22425512B00163D0C;
+			remoteInfo = "Tisym_Watch WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		487DFAEC2425512D00163D0C /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				487DFAD42425512B00163D0C /* Tisym_Watch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487DFAF02425512D00163D0C /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				487DFAC52425512500163D0C /* Tisym_Watch WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4814CEF024214BA500B9C272 /* Tisym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tisym.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,11 +118,33 @@
 		487DFABA2424DCBB00163D0C /* LoginHue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHue.swift; sourceTree = "<group>"; };
 		487DFABC2424E90E00163D0C /* HueError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueError.swift; sourceTree = "<group>"; };
 		487DFABE2425487D00163D0C /* Tisym.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tisym.entitlements; sourceTree = "<group>"; };
+		487DFAC12425512500163D0C /* Tisym_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tisym_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		487DFAC42425512500163D0C /* Tisym_Watch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tisym_Watch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		487DFACA2425512500163D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		487DFACC2425512B00163D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		487DFACE2425512B00163D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487DFAD32425512B00163D0C /* Tisym_Watch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Tisym_Watch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		487DFADA2425512B00163D0C /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		487DFADC2425512B00163D0C /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		487DFADE2425512B00163D0C /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		487DFAE02425512B00163D0C /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		487DFAE22425512D00163D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		487DFAE52425512D00163D0C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		487DFAE72425512D00163D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		487DFAE82425512D00163D0C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		487EFD562425695F0002DFB0 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
 		48DAB2F82424B9DE00C3F073 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4814CEED24214BA500B9C272 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487DFAD02425512B00163D0C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -70,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				4814CEF224214BA500B9C272 /* Tisym */,
+				487DFAC82425512500163D0C /* Tisym_Watch WatchKit App */,
+				487DFAD72425512B00163D0C /* Tisym_Watch WatchKit Extension */,
 				4814CEF124214BA500B9C272 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +168,9 @@
 			isa = PBXGroup;
 			children = (
 				4814CEF024214BA500B9C272 /* Tisym.app */,
+				487DFAC12425512500163D0C /* Tisym_Watch.app */,
+				487DFAC42425512500163D0C /* Tisym_Watch WatchKit App.app */,
+				487DFAD32425512B00163D0C /* Tisym_Watch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +244,48 @@
 			path = Ressources;
 			sourceTree = "<group>";
 		};
+		487DFAC82425512500163D0C /* Tisym_Watch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				487DFAC92425512500163D0C /* Interface.storyboard */,
+				487DFACC2425512B00163D0C /* Assets.xcassets */,
+				487DFACE2425512B00163D0C /* Info.plist */,
+			);
+			path = "Tisym_Watch WatchKit App";
+			sourceTree = "<group>";
+		};
+		487DFAD72425512B00163D0C /* Tisym_Watch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				487EFD5824256A370002DFB0 /* Views */,
+				487DFADA2425512B00163D0C /* HostingController.swift */,
+				487DFADC2425512B00163D0C /* ExtensionDelegate.swift */,
+				487DFADE2425512B00163D0C /* NotificationController.swift */,
+				487DFAE02425512B00163D0C /* NotificationView.swift */,
+				487DFAE22425512D00163D0C /* Assets.xcassets */,
+				487DFAE72425512D00163D0C /* Info.plist */,
+				487DFAE82425512D00163D0C /* PushNotificationPayload.apns */,
+				487DFAE42425512D00163D0C /* Preview Content */,
+			);
+			path = "Tisym_Watch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		487DFAE42425512D00163D0C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				487DFAE52425512D00163D0C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		487EFD5824256A370002DFB0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				487EFD562425695F0002DFB0 /* ContextMenu.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -171,6 +306,57 @@
 			productReference = 4814CEF024214BA500B9C272 /* Tisym.app */;
 			productType = "com.apple.product-type.application";
 		};
+		487DFAC02425512500163D0C /* Tisym_Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487DFAF12425512D00163D0C /* Build configuration list for PBXNativeTarget "Tisym_Watch" */;
+			buildPhases = (
+				487DFABF2425512500163D0C /* Resources */,
+				487DFAF02425512D00163D0C /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				487DFAC72425512500163D0C /* PBXTargetDependency */,
+			);
+			name = Tisym_Watch;
+			productName = Tisym_Watch;
+			productReference = 487DFAC12425512500163D0C /* Tisym_Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		487DFAC32425512500163D0C /* Tisym_Watch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487DFAED2425512D00163D0C /* Build configuration list for PBXNativeTarget "Tisym_Watch WatchKit App" */;
+			buildPhases = (
+				487DFAC22425512500163D0C /* Resources */,
+				487DFAEC2425512D00163D0C /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				487DFAD62425512B00163D0C /* PBXTargetDependency */,
+			);
+			name = "Tisym_Watch WatchKit App";
+			productName = "Tisym_Watch WatchKit App";
+			productReference = 487DFAC42425512500163D0C /* Tisym_Watch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		487DFAD22425512B00163D0C /* Tisym_Watch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 487DFAE92425512D00163D0C /* Build configuration list for PBXNativeTarget "Tisym_Watch WatchKit Extension" */;
+			buildPhases = (
+				487DFACF2425512B00163D0C /* Sources */,
+				487DFAD02425512B00163D0C /* Frameworks */,
+				487DFAD12425512B00163D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Tisym_Watch WatchKit Extension";
+			productName = "Tisym_Watch WatchKit Extension";
+			productReference = 487DFAD32425512B00163D0C /* Tisym_Watch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -182,6 +368,15 @@
 				ORGANIZATIONNAME = "Hadrien Barbat";
 				TargetAttributes = {
 					4814CEEF24214BA500B9C272 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					487DFAC02425512500163D0C = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					487DFAC32425512500163D0C = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					487DFAD22425512B00163D0C = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -200,6 +395,9 @@
 			projectRoot = "";
 			targets = (
 				4814CEEF24214BA500B9C272 /* Tisym */,
+				487DFAC02425512500163D0C /* Tisym_Watch */,
+				487DFAC32425512500163D0C /* Tisym_Watch WatchKit App */,
+				487DFAD22425512B00163D0C /* Tisym_Watch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -214,6 +412,31 @@
 				4814CEFD24214BAD00B9C272 /* Preview Assets.xcassets in Resources */,
 				48305FF82423E1D100F64BB4 /* mockLights.json in Resources */,
 				4814CEFA24214BAD00B9C272 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487DFABF2425512500163D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487DFAC22425512500163D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487DFACD2425512B00163D0C /* Assets.xcassets in Resources */,
+				487DFACB2425512500163D0C /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		487DFAD12425512B00163D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487DFAE62425512D00163D0C /* Preview Assets.xcassets in Resources */,
+				487DFAE32425512D00163D0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,7 +465,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		487DFACF2425512B00163D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				487DFAF9242552DE00163D0C /* Light.swift in Sources */,
+				487DFAFB242552E700163D0C /* LoginHue.swift in Sources */,
+				487DFAFE242552F000163D0C /* ContentView.swift in Sources */,
+				487DFADB2425512B00163D0C /* HostingController.swift in Sources */,
+				487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */,
+				487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */,
+				487DFB002425539100163D0C /* Utils.swift in Sources */,
+				487DFAF5242552CE00163D0C /* Data.swift in Sources */,
+				487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */,
+				487DFAFC242552EA00163D0C /* LightRow.swift in Sources */,
+				487DFADF2425512B00163D0C /* NotificationController.swift in Sources */,
+				487DFAFD242552ED00163D0C /* LightList.swift in Sources */,
+				487DFB012425539500163D0C /* extensions.swift in Sources */,
+				487DFAF7242552D400163D0C /* HueError.swift in Sources */,
+				487DFADD2425512B00163D0C /* ExtensionDelegate.swift in Sources */,
+				487DFB022425539800163D0C /* ValueStore.swift in Sources */,
+				487DFAFA242552E300163D0C /* UserData.swift in Sources */,
+				487DFAE12425512B00163D0C /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		487DFAC72425512500163D0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 487DFAC32425512500163D0C /* Tisym_Watch WatchKit App */;
+			targetProxy = 487DFAC62425512500163D0C /* PBXContainerItemProxy */;
+		};
+		487DFAD62425512B00163D0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 487DFAD22425512B00163D0C /* Tisym_Watch WatchKit Extension */;
+			targetProxy = 487DFAD52425512B00163D0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		4814CEFE24214BAD00B9C272 /* LaunchScreen.storyboard */ = {
@@ -251,6 +512,14 @@
 				4814CEFF24214BAD00B9C272 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		487DFAC92425512500163D0C /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				487DFACA2425512500163D0C /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -416,6 +685,118 @@
 			};
 			name = Release;
 		};
+		487DFAEA2425512D00163D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Tisym_Watch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = T7562M4U35;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Tisym_Watch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		487DFAEB2425512D00163D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Tisym_Watch WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = T7562M4U35;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Tisym_Watch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		487DFAEE2425512D00163D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				IBSC_MODULE = Tisym_Watch_WatchKit_Extension;
+				INFOPLIST_FILE = "Tisym_Watch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Debug;
+		};
+		487DFAEF2425512D00163D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				IBSC_MODULE = Tisym_Watch_WatchKit_Extension;
+				INFOPLIST_FILE = "Tisym_Watch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.1;
+			};
+			name = Release;
+		};
+		487DFAF22425512D00163D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		487DFAF32425512D00163D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -433,6 +814,33 @@
 			buildConfigurations = (
 				4814CF0524214BAE00B9C272 /* Debug */,
 				4814CF0624214BAE00B9C272 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		487DFAE92425512D00163D0C /* Build configuration list for PBXNativeTarget "Tisym_Watch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487DFAEA2425512D00163D0C /* Debug */,
+				487DFAEB2425512D00163D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		487DFAED2425512D00163D0C /* Build configuration list for PBXNativeTarget "Tisym_Watch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487DFAEE2425512D00163D0C /* Debug */,
+				487DFAEF2425512D00163D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		487DFAF12425512D00163D0C /* Build configuration list for PBXNativeTarget "Tisym_Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				487DFAF22425512D00163D0C /* Debug */,
+				487DFAF32425512D00163D0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

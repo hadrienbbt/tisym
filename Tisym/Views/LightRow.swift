@@ -13,7 +13,7 @@ struct LightRow: View {
     
     var body: some View {
         Toggle(isOn: $light.isOn) {
-            Text(light.description)
+            Text(light.name)
         }
     }
 }

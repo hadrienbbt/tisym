@@ -20,8 +20,18 @@ struct ContentView: View {
             LoginHue()
             .environmentObject(hueDelegate)
         } else {
+            #if os(watchOS)
             LightList()
-            .environmentObject(hueDelegate)
+                .environmentObject(hueDelegate)
+                .contextMenu(contextMenu(menuItems: {
+                    ContextMenu()
+                }))
+            #else
+            NavigationView {
+                LightList()
+                    .environmentObject(hueDelegate)
+            }
+            #endif
         }
     }
 }

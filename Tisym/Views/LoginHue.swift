@@ -18,12 +18,7 @@ struct LoginHue: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Button(action: {
-                self.hueDelegate.createUser { result in
-                    switch result {
-                    case .success(_): break
-                    case .failure(let err): print(err)
-                    }
-                }
+                self.hueDelegate.createUser()
             }) { Text("Sync") }
         }
     }
@@ -45,7 +40,7 @@ struct NoBridge: View {
                 .multilineTextAlignment(.center)
                 .padding()
             Button(action: {
-                self.hueDelegate.getBridgeIp { _ in }
+                self.hueDelegate.fetchBridge()
             }) { Text("Retry") }
         }
     }

@@ -10,11 +10,6 @@ import Foundation
 
 @objc class ValueStore: NSObject {
     
-    func deleteUserConfig() {
-        bridgeIp = nil
-        hueUser = nil
-    }
-
     var bridgeIp: String? {
         get { return read("bridgeIp") as? String }
         set { write("bridgeIp", newValue) }
