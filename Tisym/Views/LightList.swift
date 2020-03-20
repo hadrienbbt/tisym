@@ -12,18 +12,20 @@ struct LightList: View {
     @EnvironmentObject var hueDelegate: HueDelegate
     
     var body: some View {
-        List {
-            ForEach(hueDelegate.lights.indices, id: \.description) { i in
-                LightRow(light: self.$hueDelegate.lights[i])
-                    .environmentObject(self.hueDelegate)
+        NavigationView {
+            List {
+                ForEach(hueDelegate.lights.indices, id: \.description) { i in
+                    LightRow(light: self.$hueDelegate.lights[i])
+                        .environmentObject(self.hueDelegate)
+                }
             }
+            .navigationBarTitle(Text("Lights"))
+            .navigationBarItems(trailing:
+                Button("Logout") {
+                    self.hueDelegate.userData.logout()
+                }
+            )
         }
-        .navigationBarTitle(Text("Lights"))
-        .navigationBarItems(trailing:
-            Button("Logout") {
-                self.hueDelegate.userData.logout()
-            }
-        )
     }
 }
 
@@ -33,14 +35,3 @@ struct LightList_Previews: PreviewProvider {
             .environmentObject(HueDelegate(userData: UserData()))
     }
 }
-
-//NavigationView {
-//    List {
-//        ForEach(hueDelegate.lights.indices, id: \.description) { i in
-//            LightRow(light: self.$hueDelegate.lights[i])
-//                .environmentObject(self.hueDelegate)
-//        }
-//    }
-//    .navigationBarTitle(Text("Lights"))
-//    .listStyle(GroupedListStyle())
-//}

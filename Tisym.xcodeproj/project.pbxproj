@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480EDEA32425797200E8232F /* WatchLightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480EDEA22425797200E8232F /* WatchLightList.swift */; };
+		480EDEA42425798C00E8232F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CEF724214BA500B9C272 /* ContentView.swift */; };
 		4814CEF424214BA500B9C272 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CEF324214BA500B9C272 /* AppDelegate.swift */; };
 		4814CEF624214BA500B9C272 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CEF524214BA500B9C272 /* SceneDelegate.swift */; };
 		4814CEF824214BA500B9C272 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CEF724214BA500B9C272 /* ContentView.swift */; };
@@ -42,8 +44,6 @@
 		487DFAFA242552E300163D0C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
 		487DFAFB242552E700163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
 		487DFAFC242552EA00163D0C /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
-		487DFAFD242552ED00163D0C /* LightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEC2423D35A00F64BB4 /* LightList.swift */; };
-		487DFAFE242552F000163D0C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CEF724214BA500B9C272 /* ContentView.swift */; };
 		487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0724214C9700B9C272 /* HueDelegate.swift */; };
 		487DFB002425539100163D0C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0924214E1200B9C272 /* Utils.swift */; };
 		487DFB012425539500163D0C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
@@ -96,6 +96,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		480EDEA22425797200E8232F /* WatchLightList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchLightList.swift; sourceTree = "<group>"; };
 		4814CEF024214BA500B9C272 /* Tisym.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tisym.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4814CEF324214BA500B9C272 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4814CEF524214BA500B9C272 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -282,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				487EFD562425695F0002DFB0 /* ContextMenu.swift */,
+				480EDEA22425797200E8232F /* WatchLightList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -471,17 +473,17 @@
 			files = (
 				487DFAF9242552DE00163D0C /* Light.swift in Sources */,
 				487DFAFB242552E700163D0C /* LoginHue.swift in Sources */,
-				487DFAFE242552F000163D0C /* ContentView.swift in Sources */,
 				487DFADB2425512B00163D0C /* HostingController.swift in Sources */,
 				487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */,
 				487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */,
 				487DFB002425539100163D0C /* Utils.swift in Sources */,
 				487DFAF5242552CE00163D0C /* Data.swift in Sources */,
 				487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */,
+				480EDEA42425798C00E8232F /* ContentView.swift in Sources */,
 				487DFAFC242552EA00163D0C /* LightRow.swift in Sources */,
 				487DFADF2425512B00163D0C /* NotificationController.swift in Sources */,
-				487DFAFD242552ED00163D0C /* LightList.swift in Sources */,
 				487DFB012425539500163D0C /* extensions.swift in Sources */,
+				480EDEA32425797200E8232F /* WatchLightList.swift in Sources */,
 				487DFAF7242552D400163D0C /* HueError.swift in Sources */,
 				487DFADD2425512B00163D0C /* ExtensionDelegate.swift in Sources */,
 				487DFB022425539800163D0C /* ValueStore.swift in Sources */,

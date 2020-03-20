@@ -21,16 +21,11 @@ struct ContentView: View {
             .environmentObject(hueDelegate)
         } else {
             #if os(watchOS)
-            LightList()
+            WatchLightList()
                 .environmentObject(hueDelegate)
-                .contextMenu(contextMenu(menuItems: {
-                    ContextMenu()
-                }))
             #else
-            NavigationView {
                 LightList()
                     .environmentObject(hueDelegate)
-            }
             #endif
         }
     }
