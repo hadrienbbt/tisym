@@ -14,7 +14,9 @@ struct Light: Hashable, Codable, Identifiable {
     let productId: String
     let name: String
     var isOn: Bool {
-        didSet { print(self.description) }
+        didSet {
+            print(self.description)
+        }
     }
     
     init(_ id: String, _ productId: String, _ name: String, _ isOn: Bool) {

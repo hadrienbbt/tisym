@@ -7,21 +7,65 @@
 //
 
 import Foundation
+import Combine
 
 class HueDelegate: ObservableObject {
     
     private let ip = "192.168.1.14"
-    private let user = "6lsbVI1gkOIshhJlcekxA-tisfEwbEP3K2kG5RTU"
     
     var lastState = [String: Any]()
     @Published var lights = lightData
     @Published var loading = false
-        
-    init() {
-        print("Loading: \(self.loading)")
+    @Published var userData: UserData
+    
+    init(userData: UserData) {
+        self.userData = userData
+        if self.userData.hueUser != nil {
+            self.userLoaded()
+        }
+    }
+    
+    func createUser(_ completion: @escaping (Result<String,Error>) -> Void) {
+        let url = URL(string: "http://\(ip)/api/")!
+        let params = ["devicetype": "Tisym#\(userData.deviceName)"]
+        Utils.httpRequest(endpoint: url, method: .post, params: params) { result in
+            switch result {
+            case .success(let res):
+                if let error = res["error"] as? [String: Any],
+                    let hueError: HueError = decode(json: error) {
+                    completion(.failure(hueError))
+                    return
+                }
+                guard let success = res["success"] as? [String: Any],
+                    let hueUser = success["username"] as? String
+                else {
+                    print("Can't parse response to get username")
+                    completion(.failure(HueError()))
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.userData.hueUser = hueUser
+                    self.userLoaded()
+                }
+                completion(.success(hueUser))
+            case .failure(let err):
+                completion(Result.failure(err))
+            }
+        }
+    }
+    
+    func userLoaded() {
+        loading = true
         getState { lights in
             DispatchQueue.main.async {
                 self.lights = self.createLights(from: lights)
+                self.lights.forEach { light in
+                    if light.name == "Bureau" {
+                        self.toggleLight(light: light) { _ in
+                            print(lights.description)
+                        }
+                    }
+                }
                 self.loading = false
                 print(self.lights)
                 print("Loading: \(self.loading)")
@@ -30,19 +74,18 @@ class HueDelegate: ObservableObject {
     }
     
     func getState(_ callback: @escaping ([String: Any]) -> Void) {
-        let url = URL(string: "http://\(ip)/api/\(user)/")!
-        let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
-            guard let data = data,
-                let string = String(data: data, encoding: .utf8),
-                let dict = Utils.convertToDictionary(text: string)
-                else {
-                    callback([:])
-                    return
+        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!)/")!
+        Utils.httpRequest(endpoint: url, method: .get, params: nil) { result in
+            switch(result) {
+            case .success(let dict):
+                self.lastState = dict
+                callback(dict)
+            case .failure(let err):
+                print(err)
+                callback([:])
             }
-            self.lastState = dict
-            callback(dict)
+            
         }
-        task.resume()
     }
     
     func createLights(from state: [String: Any]) -> [Light] {
@@ -56,8 +99,8 @@ class HueDelegate: ObservableObject {
     }
     
     func toggleLight(light: Light, completion: @escaping (Bool) -> Void) {
-        let url = URL(string: "http://\(ip)/api/\(user))/lights/\(light.id)/state")!
-        Utils.postRequest(endpoint: url, params: ["on": !light.isOn]) { result in
+        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!))/lights/\(light.id)/state")!
+        Utils.httpRequest(endpoint: url, method: .put, params: ["on": !light.isOn]) { result in
             switch result {
                 case .success(let res):
                     print(res)

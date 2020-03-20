@@ -22,6 +22,9 @@
 		48305FF82423E1D100F64BB4 /* mockLights.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF72423E1D100F64BB4 /* mockLights.json */; };
 		48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
 		48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FFB242427C100F64BB4 /* SmartPlug.swift */; };
+		487DFAB72424D7FC00163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
+		487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
+		487DFABD2424E90E00163D0C /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABC2424E90E00163D0C /* HueError.swift */; };
 		48DAB2F92424B9DE00C3F073 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
 		48FD66372422B23800EA2FA4 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +48,9 @@
 		48305FF72423E1D100F64BB4 /* mockLights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockLights.json; sourceTree = "<group>"; };
 		48305FF92423E2DF00F64BB4 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
 		48305FFB242427C100F64BB4 /* SmartPlug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlug.swift; sourceTree = "<group>"; };
+		487DFAB62424D7FC00163D0C /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
+		487DFABA2424DCBB00163D0C /* LoginHue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHue.swift; sourceTree = "<group>"; };
+		487DFABC2424E90E00163D0C /* HueError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueError.swift; sourceTree = "<group>"; };
 		48DAB2F82424B9DE00C3F073 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +94,7 @@
 				4814CEFB24214BAD00B9C272 /* Preview Content */,
 				4814CF0924214E1200B9C272 /* Utils.swift */,
 				48DAB2F82424B9DE00C3F073 /* extensions.swift */,
+				487DFAB62424D7FC00163D0C /* ValueStore.swift */,
 			);
 			path = Tisym;
 			sourceTree = "<group>";
@@ -106,6 +113,7 @@
 				48305FEA2423D2E400F64BB4 /* UserData.swift */,
 				4814CF0B24214FBF00B9C272 /* Light.swift */,
 				48305FFB242427C100F64BB4 /* SmartPlug.swift */,
+				487DFABC2424E90E00163D0C /* HueError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 				4814CEF724214BA500B9C272 /* ContentView.swift */,
 				48305FEC2423D35A00F64BB4 /* LightList.swift */,
 				48305FF92423E2DF00F64BB4 /* LightRow.swift */,
+				487DFABA2424DCBB00163D0C /* LoginHue.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487DFAB72424D7FC00163D0C /* ValueStore.swift in Sources */,
 				48305FF42423DEAD00F64BB4 /* Data.swift in Sources */,
 				48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */,
 				48FD66372422B23800EA2FA4 /* Light.swift in Sources */,
@@ -220,6 +230,8 @@
 				48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */,
 				4814CEF424214BA500B9C272 /* AppDelegate.swift in Sources */,
 				4814CF0824214C9700B9C272 /* HueDelegate.swift in Sources */,
+				487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */,
+				487DFABD2424E90E00163D0C /* HueError.swift in Sources */,
 				48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */,
 				4814CEF624214BA500B9C272 /* SceneDelegate.swift in Sources */,
 				48305FED2423D35A00F64BB4 /* LightList.swift in Sources */,

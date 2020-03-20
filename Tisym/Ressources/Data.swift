@@ -33,6 +33,18 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
+func decode<T: Decodable>(json: [String: Any]) -> T? {
+    do {
+        let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
+        let decoder = JSONDecoder()
+        return try decoder.decode(T.self, from: jsonData)
+    } catch {
+        print("Couldn't parse \(json) as \(T.self):\n\(error)")
+        return nil
+        
+    }
+}
+
 final class ImageStore {
     typealias _ImageDictionary = [String: CGImage]
     fileprivate var images: _ImageDictionary = [:]

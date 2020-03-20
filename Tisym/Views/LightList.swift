@@ -25,6 +25,6 @@ struct LightList: View {
 struct LightList_Previews: PreviewProvider {
     static var previews: some View {
         LightList()
-            .environmentObject(HueDelegate())
+            .environmentObject(HueDelegate(userData: UserData()))
     }
 }

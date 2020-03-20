@@ -8,7 +8,20 @@
 
 import SwiftUI
 import Combine
+import UIKit
 
-final class UserData: ObservableObject  {
-        
+struct UserData  {
+    let valueStore = ValueStore()
+    
+    var hueUser: String? {
+        willSet(newValue) {
+            valueStore.hueUser = newValue
+        }
+    }
+    
+    let deviceName = UIDevice.current.name
+    
+    init() {
+        hueUser = valueStore.hueUser
+    }
 }

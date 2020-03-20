@@ -9,16 +9,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var hueDelegate: HueDelegate
     
+    @ViewBuilder
     var body: some View {
-        Text("ContentView")
+        if hueDelegate.userData.hueUser != nil {
+            LightList()
+                .environmentObject(hueDelegate)
+        } else {
+            LoginHue()
+                .environmentObject(hueDelegate)
+        }
     }
 }
 
 
 struct ContentView_Previews: PreviewProvider {
+    static var hueDelegate = HueDelegate(userData: UserData())
     
     static var previews: some View {
         ContentView()
+            .environmentObject(hueDelegate)
     }
 }
