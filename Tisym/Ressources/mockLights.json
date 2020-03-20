@@ -1,0 +1,26 @@
+[
+    {
+        "id": "0",
+        "productId": "23456789",
+        "name": "Blibli",
+        "isOn": true,
+    },
+    {
+        "id": "1",
+        "productId": "567347",
+        "name": "Blabla",
+        "isOn": true,
+    },
+    {
+        "id": "2",
+        "productId": "7589670",
+        "name": "Bloblo",
+        "isOn": false,
+    },
+    {
+        "id": "3",
+        "productId": "23576458",
+        "name": "Blublu",
+        "isOn": true,
+    },
+]
