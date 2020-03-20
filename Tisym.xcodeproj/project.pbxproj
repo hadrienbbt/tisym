@@ -51,6 +51,7 @@
 		487DFAB62424D7FC00163D0C /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		487DFABA2424DCBB00163D0C /* LoginHue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHue.swift; sourceTree = "<group>"; };
 		487DFABC2424E90E00163D0C /* HueError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueError.swift; sourceTree = "<group>"; };
+		487DFABE2425487D00163D0C /* Tisym.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tisym.entitlements; sourceTree = "<group>"; };
 		48DAB2F82424B9DE00C3F073 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +85,7 @@
 		4814CEF224214BA500B9C272 /* Tisym */ = {
 			isa = PBXGroup;
 			children = (
+				487DFABE2425487D00163D0C /* Tisym.entitlements */,
 				48305FEF2423D60200F64BB4 /* Controllers */,
 				48305FEE2423D5EB00F64BB4 /* Views */,
 				4814CF0D24214FC500B9C272 /* Models */,
@@ -372,7 +374,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tisym/Tisym.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tisym/Preview Content\"";
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
@@ -383,6 +387,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = barbat.hadrien.Tisym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -392,7 +397,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Tisym/Tisym.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Tisym/Preview Content\"";
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
@@ -403,6 +410,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = barbat.hadrien.Tisym;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -10,9 +10,7 @@ import Foundation
 import Combine
 
 class HueDelegate: ObservableObject {
-    
-    private let ip = "192.168.1.14" // get with https://discovery.meethue.com/
-    
+        
     @Published var lights = [Light]() {
         willSet {
             self.updateLights(lights: newValue)
@@ -22,9 +20,37 @@ class HueDelegate: ObservableObject {
     @Published var userData: UserData
     
     init(userData: UserData) {
+        loading = true
         self.userData = userData
-        if self.userData.hueUser != nil {
-            self.userLoaded()
+        getBridgeIp { result in
+            switch result {
+            case .success():
+                if self.userData.hueUser != nil {
+                    self.userLoaded()
+                }
+            case .failure(let err): print("Error \(err)")
+            }
+        }
+    }
+    
+    func getBridgeIp(_ completion: @escaping (Result<Void,Error>) -> Void) {
+        if self.userData.bridgeIp != nil {
+            completion(.success(()))
+            return
+        }
+        Utils.httpRequest(endpoint: "https://discovery.meethue.com/", method: .get, params: nil) { result in
+            switch result {
+            case .success(let dict):
+                if let ip = dict["internalipaddress"] as? String {
+                    DispatchQueue.main.async {
+                        self.userData.bridgeIp = ip
+                        completion(.success(()))
+                    }
+                } else {
+                    completion(.failure(HueError("Unable to find a bridge on the network")))
+                }
+            case .failure(let err): completion(.failure(err))
+            }
         }
     }
     
@@ -36,12 +62,10 @@ class HueDelegate: ObservableObject {
                 }
             }
         }
-        print(self.lights)
-        print(lights)
     }
     
     func createUser(_ completion: @escaping (Result<String,Error>) -> Void) {
-        let url = URL(string: "http://\(ip)/api/")!
+        let url = "http://\(userData.bridgeIp!)/api"
         let params = ["devicetype": "Tisym#\(userData.deviceName)"]
         Utils.httpRequest(endpoint: url, method: .post, params: params) { result in
             switch result {
@@ -66,7 +90,6 @@ class HueDelegate: ObservableObject {
     
     func userLoaded() {
         print("Current user loaded: \(userData.hueUser!)")
-        loading = true
         getLights { lights in
             DispatchQueue.main.async {
                 self.lights = self.createLights(from: lights)
@@ -76,7 +99,7 @@ class HueDelegate: ObservableObject {
     }
     
     func getLights(_ callback: @escaping ([String: Any]) -> Void) {
-        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!)/lights")!
+        let url = "http://\(userData.bridgeIp!)/api/\(userData.hueUser!)/lights"
         Utils.httpRequest(endpoint: url, method: .get, params: nil) { result in
             switch(result) {
             case .success(let dict):
@@ -109,7 +132,7 @@ class HueDelegate: ObservableObject {
     }
     
     func sendToLight(light: Light, message: [String: Any], completion: @escaping (Result<[String: Any], Error>) -> Void) {
-        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!)/lights/\(light.id)/state")!
+        let url = "http://\(userData.bridgeIp!)/api/\(userData.hueUser!)/lights/\(light.id)/state"
         Utils.httpRequest(endpoint: url, method: .put, params: message) { completion($0) }
     }
 }

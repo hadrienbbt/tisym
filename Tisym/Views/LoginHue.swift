@@ -34,3 +34,19 @@ struct LoginHue_Previews: PreviewProvider {
         LoginHue()
     }
 }
+
+struct NoBridge: View {
+    @EnvironmentObject var hueDelegate: HueDelegate
+    
+    var body: some View {
+        VStack(alignment: .center, spacing: 20.0) {
+            Text("No bridge found. please connect to the same network than your hue bridge and press retry")
+                .font(.body)
+                .multilineTextAlignment(.center)
+                .padding()
+            Button(action: {
+                self.hueDelegate.getBridgeIp { _ in }
+            }) { Text("Retry") }
+        }
+    }
+}

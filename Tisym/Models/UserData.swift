@@ -19,9 +19,16 @@ struct UserData  {
         }
     }
     
+    var bridgeIp: String? {
+        willSet(newValue) {
+            valueStore.bridgeIp = newValue
+        }
+    }
+    
     let deviceName = UIDevice.current.name
     
     init() {
         hueUser = valueStore.hueUser
+        bridgeIp = valueStore.bridgeIp
     }
 }

@@ -33,8 +33,8 @@ class Utils {
         case put = "PUT"
     }
     
-    static func httpRequest(endpoint: URL, method: HttpMethod, params: Dict?, completion: @escaping (Result<Dict,Error>) -> Void) {
-        var request = URLRequest(url: endpoint)
+    static func httpRequest(endpoint: String, method: HttpMethod, params: Dict?, completion: @escaping (Result<Dict,Error>) -> Void) {
+        var request = URLRequest(url: URL(string: endpoint)!)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = method.rawValue

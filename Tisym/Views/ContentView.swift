@@ -13,12 +13,15 @@ struct ContentView: View {
     
     @ViewBuilder
     var body: some View {
-        if hueDelegate.userData.hueUser != nil {
-            LightList()
+        if hueDelegate.userData.bridgeIp == nil {
+            NoBridge()
                 .environmentObject(hueDelegate)
-        } else {
+        } else if hueDelegate.userData.hueUser == nil {
             LoginHue()
-                .environmentObject(hueDelegate)
+            .environmentObject(hueDelegate)
+        } else {
+            LightList()
+            .environmentObject(hueDelegate)
         }
     }
 }
