@@ -13,11 +13,7 @@ struct Light: Hashable, Codable, Identifiable {
     let id: String
     let productId: String
     let name: String
-    var isOn: Bool {
-        didSet {
-            print(self.description)
-        }
-    }
+    var isOn: Bool
     
     init(_ id: String, _ productId: String, _ name: String, _ isOn: Bool) {
         self.id = id

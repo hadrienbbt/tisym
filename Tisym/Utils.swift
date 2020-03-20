@@ -38,10 +38,13 @@ class Utils {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.httpMethod = method.rawValue
+        
+        print("Sending to \(endpoint.description)")
         if let json = params {
             request.httpBody = try? JSONSerialization.data(withJSONObject: json)
+            print("Params \(json.description)")
         }
-
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard error == nil else {
                 completion(.failure(error!))
@@ -57,7 +60,12 @@ class Utils {
                 return
             }
             
-            completion(.success(dict))
+            if let error = dict["error"] as? [String: Any],
+                let hueError: HueError = decode(json: error) {
+                completion(.failure(hueError))
+            } else {
+                completion(.success(dict))
+            }
             
             guard let response = response as? HTTPURLResponse else {
                 print("response type is not HTTPURLResponse")

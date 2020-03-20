@@ -13,9 +13,9 @@ struct HueError: Decodable, Error {
     let address: String
     let description: String
     
-    init() {
+    init(_ description: String = "Unknown Error") {
         self.type = 0
         self.address = ""
-        self.description = "Unknown Error"
+        self.description = description
     }
 }

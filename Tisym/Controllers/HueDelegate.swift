@@ -11,10 +11,13 @@ import Combine
 
 class HueDelegate: ObservableObject {
     
-    private let ip = "192.168.1.14"
+    private let ip = "192.168.1.14" // get with https://discovery.meethue.com/
     
-    var lastState = [String: Any]()
-    @Published var lights = lightData
+    @Published var lights = [Light]() {
+        willSet {
+            self.updateLights(lights: newValue)
+        }
+    }
     @Published var loading = false
     @Published var userData: UserData
     
@@ -25,22 +28,29 @@ class HueDelegate: ObservableObject {
         }
     }
     
+    func updateLights(lights: [Light]) {
+        self.lights.forEach { light in
+            if let newLight = lights.first(where: { $0.id == light.id }) {
+                if newLight.isOn != light.isOn {
+                    sendToLight(light: newLight, message: ["on": newLight.isOn]) { _ in }
+                }
+            }
+        }
+        print(self.lights)
+        print(lights)
+    }
+    
     func createUser(_ completion: @escaping (Result<String,Error>) -> Void) {
         let url = URL(string: "http://\(ip)/api/")!
         let params = ["devicetype": "Tisym#\(userData.deviceName)"]
         Utils.httpRequest(endpoint: url, method: .post, params: params) { result in
             switch result {
             case .success(let res):
-                if let error = res["error"] as? [String: Any],
-                    let hueError: HueError = decode(json: error) {
-                    completion(.failure(hueError))
-                    return
-                }
                 guard let success = res["success"] as? [String: Any],
                     let hueUser = success["username"] as? String
                 else {
-                    print("Can't parse response to get username")
-                    completion(.failure(HueError()))
+                    let error = HueError("Can't parse response to get username")
+                    completion(.failure(error))
                     return
                 }
                 DispatchQueue.main.async {
@@ -55,30 +65,21 @@ class HueDelegate: ObservableObject {
     }
     
     func userLoaded() {
+        print("Current user loaded: \(userData.hueUser!)")
         loading = true
-        getState { lights in
+        getLights { lights in
             DispatchQueue.main.async {
                 self.lights = self.createLights(from: lights)
-                self.lights.forEach { light in
-                    if light.name == "Bureau" {
-                        self.toggleLight(light: light) { _ in
-                            print(lights.description)
-                        }
-                    }
-                }
                 self.loading = false
-                print(self.lights)
-                print("Loading: \(self.loading)")
             }
         }
     }
     
-    func getState(_ callback: @escaping ([String: Any]) -> Void) {
-        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!)/")!
+    func getLights(_ callback: @escaping ([String: Any]) -> Void) {
+        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!)/lights")!
         Utils.httpRequest(endpoint: url, method: .get, params: nil) { result in
             switch(result) {
             case .success(let dict):
-                self.lastState = dict
                 callback(dict)
             case .failure(let err):
                 print(err)
@@ -88,8 +89,7 @@ class HueDelegate: ObservableObject {
         }
     }
     
-    func createLights(from state: [String: Any]) -> [Light] {
-        guard let lights = state["lights"] as? [String: Any] else { return [] }
+    func createLights(from lights: [String: Any]) -> [Light] {
         return lights.keys.reduce([]) {(result, key) in
             if let dict = lights[key] as? [String: Any], let light = Light.decode(id: key, dict: dict) {
                 return result + [light]
@@ -98,17 +98,18 @@ class HueDelegate: ObservableObject {
         }
     }
     
-    func toggleLight(light: Light, completion: @escaping (Bool) -> Void) {
-        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!))/lights/\(light.id)/state")!
-        Utils.httpRequest(endpoint: url, method: .put, params: ["on": !light.isOn]) { result in
+    func toggleLight(light: Light) -> String {
+        sendToLight(light: light, message: ["on": !light.isOn]) { result in
             switch result {
-                case .success(let res):
-                    print(res)
-                    completion(true)
-                case .failure(let err):
-                    print(err)
-                    completion(false)
+                case .success(let res): print(res)
+                case .failure(let err): print("Error: \(err)")
             }
         }
+        return light.description
+    }
+    
+    func sendToLight(light: Light, message: [String: Any], completion: @escaping (Result<[String: Any], Error>) -> Void) {
+        let url = URL(string: "http://\(ip)/api/\(userData.hueUser!)/lights/\(light.id)/state")!
+        Utils.httpRequest(endpoint: url, method: .put, params: message) { completion($0) }
     }
 }

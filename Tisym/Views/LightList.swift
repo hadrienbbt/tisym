@@ -13,8 +13,11 @@ struct LightList: View {
     
     var body: some View {
         NavigationView {
-            List(hueDelegate.lights.indices) { i in
-                LightRow(light: self.$hueDelegate.lights[i])
+            List {
+                ForEach(hueDelegate.lights.indices, id: \.description) { i in
+                    LightRow(light: self.$hueDelegate.lights[i])
+                        .environmentObject(self.hueDelegate)
+                }
             }
             .navigationBarTitle(Text("Lights"))
             .listStyle(GroupedListStyle())

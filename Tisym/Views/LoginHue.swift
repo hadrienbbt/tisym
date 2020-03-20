@@ -20,7 +20,7 @@ struct LoginHue: View {
             Button(action: {
                 self.hueDelegate.createUser { result in
                     switch result {
-                    case .success(let hueUser): print("User is created: \(hueUser)")
+                    case .success(_): break
                     case .failure(let err): print(err)
                     }
                 }

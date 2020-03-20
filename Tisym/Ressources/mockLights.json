@@ -16,11 +16,5 @@
         "productId": "7589670",
         "name": "Bloblo",
         "isOn": false,
-    },
-    {
-        "id": "3",
-        "productId": "23576458",
-        "name": "Blublu",
-        "isOn": true,
-    },
+    }
 ]
