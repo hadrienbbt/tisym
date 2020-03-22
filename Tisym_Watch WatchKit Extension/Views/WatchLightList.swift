@@ -13,21 +13,16 @@ struct WatchLightList: View {
     
     var body: some View {
         List {
-            ForEach(hueDelegate.lights.indices, id: \.description) { i in
-                LightRow(light: self.$hueDelegate.lights[i])
+            ForEach(hueDelegate.lights.indices) { i in
+                LightRow(
+                    hueDelegate: self.hueDelegate,
+                    light: self.$hueDelegate.lights[i]
+                )
             }
         }
         .navigationBarTitle(Text("Lights"))
         .contextMenu(menuItems: {
-            Button(action: {
-                self.hueDelegate.logout()
-            }, label: {
-                VStack {
-                    Image(systemName: "person.icloud")
-                        .font(.title)
-                    Text("Logout")
-                }
-            })
+            ContextMenu(hueDelegate: self.hueDelegate)
         })
     }
 }

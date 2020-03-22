@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContextMenu: View {
-    @EnvironmentObject var hueDelegate: HueDelegate
+    @ObservedObject var hueDelegate: HueDelegate
     
     var body: some View {
         Button(action: {

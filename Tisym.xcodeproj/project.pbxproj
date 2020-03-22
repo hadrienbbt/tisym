@@ -27,6 +27,7 @@
 		48758DAD24277D7F00380126 /* HueDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAC24277D7F00380126 /* HueDevice.swift */; };
 		48758DAF2427999C00380126 /* NoBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAE2427999C00380126 /* NoBridge.swift */; };
 		48758DB02427999C00380126 /* NoBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAE2427999C00380126 /* NoBridge.swift */; };
+		48758DB12427AD8500380126 /* HueDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAC24277D7F00380126 /* HueDevice.swift */; };
 		487964A22426B7E80025B897 /* LigthDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A12426B7E80025B897 /* LigthDetail.swift */; };
 		487964A32426B7E80025B897 /* LigthDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A12426B7E80025B897 /* LigthDetail.swift */; };
 		487964A52426C0EB0025B897 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A42426C0EB0025B897 /* NotificationName.swift */; };
@@ -508,6 +509,7 @@
 				487DFADD2425512B00163D0C /* ExtensionDelegate.swift in Sources */,
 				487DFB022425539800163D0C /* ValueStore.swift in Sources */,
 				487964A62426C0EB0025B897 /* NotificationName.swift in Sources */,
+				48758DB12427AD8500380126 /* HueDevice.swift in Sources */,
 				487DFAFA242552E300163D0C /* UserData.swift in Sources */,
 				48758DB02427999C00380126 /* NoBridge.swift in Sources */,
 				487DFAE12425512B00163D0C /* NotificationView.swift in Sources */,

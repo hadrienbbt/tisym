@@ -43,9 +43,13 @@ struct LigthDetail: View {
                 Text(light.name)
             }
             if light.isBulb() {
-                Stepper(onIncrement: self.addLightness, onDecrement: self.reduceBrightness) {
-                    Text("Brightness")
-                }
+                #if os(watchOS)
+                    Text("Stepper unavailable on WatchOS")
+                #else
+                    Stepper(onIncrement: self.addLightness, onDecrement: self.reduceBrightness) {
+                        Text("Brightness")
+                    }
+                #endif
             }
             if light.isColor() {
                 Button(action: { self.red() }) { Text("Red") }
