@@ -39,14 +39,19 @@ struct LigthDetail: View {
     
     var body: some View {
         List {
-            if light.brightness != nil {
+            Toggle(isOn: $light.isOn) {
+                Text(light.name)
+            }
+            if light.isBulb() {
                 Stepper(onIncrement: self.addLightness, onDecrement: self.reduceBrightness) {
                     Text("Brightness")
                 }
             }
-            Button(action: { self.red() }) { Text("Red") }
-            Button(action: { self.blue() }) { Text("Blue") }
-            Button(action: { self.green() }) { Text("Green") }
+            if light.isColor() {
+                Button(action: { self.red() }) { Text("Red") }
+                Button(action: { self.blue() }) { Text("Blue") }
+                Button(action: { self.green() }) { Text("Green") }
+            }
         }
         .navigationBarTitle(Text(light.name))
     }

@@ -58,13 +58,20 @@ class HueDelegate: ObservableObject {
         }
     }
     
-    func setColor(to light: Light, x: Float, y: Float) {
-        sendToLight(light: light, message: ["xy": [x, y], "colormode": "xy"])
+    func setColor(to light: Light, cie: CieColor) {
+        if !light.isOn {
+            sendToLight(light: light, message: ["on": true])
+        }
+        sendToLight(light: light, message: ["xy": [cie.x, cie.y], "colormode": "xy"])
+        if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
+            self.lights[i].isOn = true
+            self.lights[i].cieColor = cie
+        }
     }
     
     func setColor(to light: Light, red: Double, green: Double, blue: Double) {
         let cie = Utils.rgbToCie(red, green, blue)
-        sendToLight(light: light, message: ["xy": cie, "colormode": "xy"])
+        setColor(to: light, cie: cie)
     }
     
     func fetchBridge() {

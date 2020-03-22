@@ -9,7 +9,11 @@
 import Foundation
 
 typealias Dict = [String: Any]
-typealias CieColor = [Double]
+
+struct CieColor: Decodable, Encodable, Equatable, Hashable {
+    let x: Double
+    let y: Double
+}
 
 class Utils {
     
@@ -40,7 +44,7 @@ class Utils {
         if y.isNaN {
             y = 0
         }
-        return [x, y]
+        return CieColor(x: x, y: y)
     }
     
     static func convertToDictionary(text: String) -> [String: Any]? {

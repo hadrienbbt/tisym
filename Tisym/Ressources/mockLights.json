@@ -5,7 +5,8 @@
         "name": "Blibli",
         "isOn": true,
         "isReachable": true,
-        "brightness": 50
+        "brightness": 50,
+        "productName": "Hue color lamp"
     },
     {
         "id": "1",
@@ -13,7 +14,8 @@
         "name": "Blabla",
         "isOn": true,
         "isReachable": true,
-        "brightness": 100
+        "brightness": 100,
+        "productName": "Hue ambiance lamp"
     },
     {
         "id": "2",
@@ -21,5 +23,6 @@
         "name": "Bloblo",
         "isOn": false,
         "isReachable": true,
+        "productName": "Mystterious new product"
     }
 ]
