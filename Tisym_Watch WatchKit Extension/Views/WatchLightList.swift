@@ -15,11 +15,20 @@ struct WatchLightList: View {
         List {
             ForEach(hueDelegate.lights.indices, id: \.description) { i in
                 LightRow(light: self.$hueDelegate.lights[i])
-                    .environmentObject(self.hueDelegate)
             }
         }
         .navigationBarTitle(Text("Lights"))
-        
+        .contextMenu(menuItems: {
+            Button(action: {
+                self.hueDelegate.userData.logout()
+            }, label: {
+                VStack {
+                    Image(systemName: "person.icloud")
+                        .font(.title)
+                    Text("Logout")
+                }
+            })
+        })
     }
 }
 
@@ -29,15 +38,3 @@ struct WatchLightList_Previews: PreviewProvider {
             .environmentObject(HueDelegate(userData: UserData()))
     }
 }
-
-//.contextMenu(contextMenu(menuItems: {
-//    Button(action: {
-//        self.hueDelegate.userData.logout()
-//    }, label: {
-//        VStack {
-//            Image(systemName: "person.icloud")
-//                .font(.title)
-//            Text("Logout")
-//        }
-//    })
-//}))

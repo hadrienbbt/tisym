@@ -8,7 +8,40 @@
 
 import Foundation
 
+typealias Dict = [String: Any]
+typealias CieColor = [Double]
+
 class Utils {
+    
+    static func rgbToHex(_ red: Float, _ green: Float, _ blue: Float) -> String {
+        return String(format:"%02X", Int(red)) + String(format:"%02X", Int(green)) + String(format:"%02X", Int(blue))
+    }
+    
+    // From: https://github.com/usolved/cie-rgb-converter/blob/master/cie_rgb_converter.js
+    static func rgbToCie(_ red: Double, _ green: Double, _ blue: Double) -> CieColor
+    {
+        //Apply a gamma correction to the RGB values, which makes the color more vivid and more the like the color displayed on the screen of your device
+        let red = (red > 0.04045) ? pow((red + 0.055) / (1.0 + 0.055), 2.4) : (red / 12.92)
+        let green = (green > 0.04045) ? pow((green + 0.055) / (1.0 + 0.055), 2.4) : (green / 12.92)
+        let blue = (blue > 0.04045) ? pow((blue + 0.055) / (1.0 + 0.055), 2.4) : (blue / 12.92)
+        
+        //RGB values to XYZ using the Wide RGB D65 conversion formula
+        let X = red * 0.664511 + green * 0.154324 + blue * 0.162028
+        let Y = red * 0.283881 + green * 0.668433 + blue * 0.047685
+        let Z = red * 0.000088 + green * 0.072310 + blue * 0.986039
+        
+        //Calculate the xy values from the XYZ values
+        var x = Double(round(1000*(X / (X + Y + Z)))/1000)
+        var y = Double(round(1000*(Y / (X + Y + Z)))/1000)
+        
+        if x.isNaN {
+            x = 0
+        }
+        if y.isNaN {
+            y = 0
+        }
+        return [x, y]
+    }
     
     static func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
@@ -24,8 +57,6 @@ class Utils {
         }
         return nil
     }
-    
-    typealias Dict = [String: Any]
     
     enum HttpMethod: String {
         case get = "GET"

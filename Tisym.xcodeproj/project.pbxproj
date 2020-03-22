@@ -24,6 +24,10 @@
 		48305FF82423E1D100F64BB4 /* mockLights.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF72423E1D100F64BB4 /* mockLights.json */; };
 		48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
 		48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FFB242427C100F64BB4 /* SmartPlug.swift */; };
+		487964A22426B7E80025B897 /* LigthDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A12426B7E80025B897 /* LigthDetail.swift */; };
+		487964A32426B7E80025B897 /* LigthDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A12426B7E80025B897 /* LigthDetail.swift */; };
+		487964A52426C0EB0025B897 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A42426C0EB0025B897 /* NotificationName.swift */; };
+		487964A62426C0EB0025B897 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A42426C0EB0025B897 /* NotificationName.swift */; };
 		487DFAB72424D7FC00163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
 		487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
 		487DFABD2424E90E00163D0C /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABC2424E90E00163D0C /* HueError.swift */; };
@@ -115,6 +119,8 @@
 		48305FF72423E1D100F64BB4 /* mockLights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockLights.json; sourceTree = "<group>"; };
 		48305FF92423E2DF00F64BB4 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
 		48305FFB242427C100F64BB4 /* SmartPlug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlug.swift; sourceTree = "<group>"; };
+		487964A12426B7E80025B897 /* LigthDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigthDetail.swift; sourceTree = "<group>"; };
+		487964A42426C0EB0025B897 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		487DFAB62424D7FC00163D0C /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		487DFABA2424DCBB00163D0C /* LoginHue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHue.swift; sourceTree = "<group>"; };
 		487DFABC2424E90E00163D0C /* HueError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueError.swift; sourceTree = "<group>"; };
@@ -221,6 +227,7 @@
 				48305FEC2423D35A00F64BB4 /* LightList.swift */,
 				48305FF92423E2DF00F64BB4 /* LightRow.swift */,
 				487DFABA2424DCBB00163D0C /* LoginHue.swift */,
+				487964A12426B7E80025B897 /* LigthDetail.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -238,6 +245,7 @@
 		48305FF22423DC5800F64BB4 /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				487964A42426C0EB0025B897 /* NotificationName.swift */,
 				48305FF32423DEAD00F64BB4 /* Data.swift */,
 				48305FF52423DED800F64BB4 /* lightData.json */,
 				48305FF72423E1D100F64BB4 /* mockLights.json */,
@@ -456,6 +464,7 @@
 				4814CF0A24214E1200B9C272 /* Utils.swift in Sources */,
 				48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */,
 				4814CEF424214BA500B9C272 /* AppDelegate.swift in Sources */,
+				487964A22426B7E80025B897 /* LigthDetail.swift in Sources */,
 				4814CF0824214C9700B9C272 /* HueDelegate.swift in Sources */,
 				487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */,
 				487DFABD2424E90E00163D0C /* HueError.swift in Sources */,
@@ -463,6 +472,7 @@
 				4814CEF624214BA500B9C272 /* SceneDelegate.swift in Sources */,
 				48305FED2423D35A00F64BB4 /* LightList.swift in Sources */,
 				4814CEF824214BA500B9C272 /* ContentView.swift in Sources */,
+				487964A52426C0EB0025B897 /* NotificationName.swift in Sources */,
 				48DAB2F92424B9DE00C3F073 /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +483,7 @@
 			files = (
 				487DFAF9242552DE00163D0C /* Light.swift in Sources */,
 				487DFAFB242552E700163D0C /* LoginHue.swift in Sources */,
+				487964A32426B7E80025B897 /* LigthDetail.swift in Sources */,
 				487DFADB2425512B00163D0C /* HostingController.swift in Sources */,
 				487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */,
 				487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */,
@@ -487,6 +498,7 @@
 				487DFAF7242552D400163D0C /* HueError.swift in Sources */,
 				487DFADD2425512B00163D0C /* ExtensionDelegate.swift in Sources */,
 				487DFB022425539800163D0C /* ValueStore.swift in Sources */,
+				487964A62426C0EB0025B897 /* NotificationName.swift in Sources */,
 				487DFAFA242552E300163D0C /* UserData.swift in Sources */,
 				487DFAE12425512B00163D0C /* NotificationView.swift in Sources */,
 			);
@@ -652,6 +664,7 @@
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Tisym/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -675,6 +688,7 @@
 				DEVELOPMENT_TEAM = T7562M4U35;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Tisym/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

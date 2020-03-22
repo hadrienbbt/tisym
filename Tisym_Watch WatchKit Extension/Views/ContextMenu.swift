@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct ContextMenu: View {
-    @Binding var userData: UserData
+    @EnvironmentObject var hueDelegate: HueDelegate
     
     var body: some View {
         Button(action: {
-            self.userData.logout()
+            self.hueDelegate.userData.logout()
         }, label: {
             VStack {
                 Image(systemName: "person.icloud")

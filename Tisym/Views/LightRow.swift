@@ -10,10 +10,24 @@ import SwiftUI
 
 struct LightRow: View {
     @Binding var light: Light
+    @EnvironmentObject var hueDelegate: HueDelegate
     
     var body: some View {
-        Toggle(isOn: $light.isOn) {
-            Text(light.name)
+        let lightDetails = LigthDetail(light: $light, animating: true)
+            .environmentObject(self.hueDelegate)
+        
+        return NavigationLink(destination: lightDetails) {
+            Toggle(isOn: $light.isOn) {
+                Text(light.name)
+            }
         }
+    }
+}
+
+
+struct LightRow_Previews: PreviewProvider {
+    
+    static var previews: some View {
+        LightRow(light: .constant(lightData[0]))
     }
 }

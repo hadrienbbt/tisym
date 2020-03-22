@@ -8,6 +8,7 @@
 
 import Foundation
 import Combine
+import UIKit
 
 class HueDelegate: ObservableObject {
         
@@ -29,6 +30,29 @@ class HueDelegate: ObservableObject {
         loading = true
         self.userData = userData
         fetchBridge()
+    }
+    
+    func setBrightness(to light: Light, _ brightness: Int) {
+        if brightness < 0 {
+            setBrightness(to: light, 0)
+            return
+        }
+        if !light.isOn {
+            sendToLight(light: light, message: ["on": true])
+        }
+        sendToLight(light: light, message: ["bri": brightness])
+        if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
+            self.lights[i].brightness = brightness
+        }
+    }
+    
+    func setColor(to light: Light, x: Float, y: Float) {
+        sendToLight(light: light, message: ["xy": [x, y], "colormode": "xy"])
+    }
+    
+    func setColor(to light: Light, red: Double, green: Double, blue: Double) {
+        let cie = Utils.rgbToCie(red, green, blue)
+        sendToLight(light: light, message: ["xy": cie, "colormode": "xy"])
     }
     
     func fetchBridge() {
@@ -63,7 +87,7 @@ class HueDelegate: ObservableObject {
         self.lights.forEach { light in
             if let newLight = lights.first(where: { $0.id == light.id }) {
                 if newLight.isOn != light.isOn {
-                    sendToLight(light: newLight, message: ["on": newLight.isOn]) { _ in }
+                    sendToLight(light: newLight, message: ["on": newLight.isOn])
                 }
             }
         }
@@ -120,17 +144,22 @@ class HueDelegate: ObservableObject {
     }
     
     func toggleLight(light: Light) -> String {
-        sendToLight(light: light, message: ["on": !light.isOn]) { result in
-            switch result {
-                case .success(let res): print(res)
-                case .failure(let err): print("Error: \(err)")
-            }
-        }
+        sendToLight(light: light, message: ["on": !light.isOn])
         return light.description
     }
     
     func sendToLight(light: Light, message: [String: Any], completion: @escaping (Result<[String: Any], Error>) -> Void) {
         let url = "http://\(userData.bridgeIp!)/api/\(userData.hueUser!)/lights/\(light.id)/state"
         Utils.httpRequest(endpoint: url, method: .put, params: message) { completion($0) }
+    }
+    
+    func sendToLight(light: Light, message: [String: Any]) {
+        let url = "http://\(userData.bridgeIp!)/api/\(userData.hueUser!)/lights/\(light.id)/state"
+        Utils.httpRequest(endpoint: url, method: .put, params: message) { result in
+            switch result {
+                case .success(let res): print(res)
+                case .failure(let err): print("Error: \(err)")
+            }
+        }
     }
 }
