@@ -4,17 +4,22 @@
         "productId": "23456789",
         "name": "Blibli",
         "isOn": true,
+        "isReachable": true,
+        "brightness": 50
     },
     {
         "id": "1",
         "productId": "567347",
         "name": "Blabla",
         "isOn": true,
+        "isReachable": true,
+        "brightness": 100
     },
     {
         "id": "2",
         "productId": "7589670",
         "name": "Bloblo",
         "isOn": false,
+        "isReachable": true,
     }
 ]

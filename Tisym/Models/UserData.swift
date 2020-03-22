@@ -10,20 +10,8 @@ import SwiftUI
 import Combine
 import UIKit
 
-struct UserData  {
-    let valueStore = ValueStore()
+struct UserData {
     
-    var hueUser: String? {
-        willSet(newValue) {
-            valueStore.hueUser = newValue
-        }
-    }
-    
-    var bridgeIp: String? {
-        willSet(newValue) {
-            valueStore.bridgeIp = newValue
-        }
-    }
     #if os(iOS)
     let deviceName = UIDevice.current.name
     #endif
@@ -31,14 +19,4 @@ struct UserData  {
     let deviceName = "Watch"
     #endif
     
-    
-    init() {
-        hueUser = valueStore.hueUser
-        bridgeIp = valueStore.bridgeIp
-    }
-    
-    mutating func logout() {
-        bridgeIp = nil
-        hueUser = nil
-    }
 }

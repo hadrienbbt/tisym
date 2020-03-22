@@ -9,23 +9,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var hueDelegate: HueDelegate
+    @ObservedObject var hueDelegate = HueDelegate()
     
     @ViewBuilder
     var body: some View {
-        if hueDelegate.userData.bridgeIp == nil {
-            NoBridge()
-                .environmentObject(hueDelegate)
-        } else if hueDelegate.userData.hueUser == nil {
-            LoginHue()
-            .environmentObject(hueDelegate)
+        if hueDelegate.bridgeIp == nil {
+            NoBridge(hueDelegate: hueDelegate)
+        } else if hueDelegate.hueUser == nil {
+            LoginHue(hueDelegate: hueDelegate)
         } else {
             #if os(watchOS)
-            WatchLightList()
-                .environmentObject(hueDelegate)
+                WatchLightList(hueDelegate: hueDelegate)
             #else
-                LightList()
-                    .environmentObject(hueDelegate)
+                LightList(hueDelegate: hueDelegate)
             #endif
         }
     }
@@ -33,10 +29,7 @@ struct ContentView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
-    static var hueDelegate = HueDelegate(userData: UserData())
-    
     static var previews: some View {
         ContentView()
-            .environmentObject(hueDelegate)
     }
 }

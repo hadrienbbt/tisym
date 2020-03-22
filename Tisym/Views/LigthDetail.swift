@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LigthDetail: View {
-    @EnvironmentObject var hueDelegate: HueDelegate
+    @ObservedObject var hueDelegate: HueDelegate
     @Binding var light: Light
     @State var animating: Bool = false
     
@@ -53,8 +53,7 @@ struct LigthDetail: View {
 }
 
 struct LigthDetail_Previews: PreviewProvider {
-    
     static var previews: some View {
-        LigthDetail(light: .constant(lightData[0]), animating: true)
+        LigthDetail(hueDelegate: HueDelegate(), light: .constant(lightData[0]), animating: true)
     }
 }

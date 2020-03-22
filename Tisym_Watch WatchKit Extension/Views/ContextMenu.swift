@@ -13,7 +13,7 @@ struct ContextMenu: View {
     
     var body: some View {
         Button(action: {
-            self.hueDelegate.userData.logout()
+            self.hueDelegate.logout()
         }, label: {
             VStack {
                 Image(systemName: "person.icloud")

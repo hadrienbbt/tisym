@@ -17,10 +17,9 @@ class HostingController : WKHostingController<MainView> {
 }
 
 struct MainView : View {
-    let hueDelegate = HueDelegate(userData: UserData())
+    let hueDelegate = HueDelegate()
     
     var body: some View {
         ContentView()
-            .environmentObject(hueDelegate)
     }
 }

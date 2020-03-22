@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct LightList: View {
-    @EnvironmentObject var hueDelegate: HueDelegate
+    @ObservedObject var hueDelegate: HueDelegate
     
     var body: some View {
         NavigationView {
             List {
                 ForEach(hueDelegate.lights.indices, id: \.description) { i in
-                    LightRow(light: self.$hueDelegate.lights[i])
-                        .environmentObject(self.hueDelegate)
+                    LightRow(
+                        hueDelegate: self.hueDelegate,
+                        light: self.$hueDelegate.lights[i]
+                    )
                 }
             }
             .navigationBarTitle(Text("Lights"))
             .navigationBarItems(trailing:
-                Button("Logout") {
-                    self.hueDelegate.userData.logout()
-                }
+                Button("Logout") { self.hueDelegate.logout() }
             )
         }
     }
@@ -31,7 +31,6 @@ struct LightList: View {
 
 struct LightList_Previews: PreviewProvider {
     static var previews: some View {
-        LightList()
-            .environmentObject(HueDelegate(userData: UserData()))
+        LightList(hueDelegate: HueDelegate())
     }
 }

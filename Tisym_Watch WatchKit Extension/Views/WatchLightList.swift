@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WatchLightList: View {
-    @EnvironmentObject var hueDelegate: HueDelegate
+    @ObservedObject var hueDelegate: HueDelegate
     
     var body: some View {
         List {
@@ -20,7 +20,7 @@ struct WatchLightList: View {
         .navigationBarTitle(Text("Lights"))
         .contextMenu(menuItems: {
             Button(action: {
-                self.hueDelegate.userData.logout()
+                self.hueDelegate.logout()
             }, label: {
                 VStack {
                     Image(systemName: "person.icloud")
@@ -34,7 +34,6 @@ struct WatchLightList: View {
 
 struct WatchLightList_Previews: PreviewProvider {
     static var previews: some View {
-        WatchLightList()
-            .environmentObject(HueDelegate(userData: UserData()))
+        WatchLightList(hueDelegate: HueDelegate())
     }
 }

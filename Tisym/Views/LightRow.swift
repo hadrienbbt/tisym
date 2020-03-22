@@ -9,13 +9,15 @@
 import SwiftUI
 
 struct LightRow: View {
+    @ObservedObject var hueDelegate: HueDelegate
     @Binding var light: Light
-    @EnvironmentObject var hueDelegate: HueDelegate
     
     var body: some View {
-        let lightDetails = LigthDetail(light: $light, animating: true)
-            .environmentObject(self.hueDelegate)
-        
+        let lightDetails = LigthDetail(
+            hueDelegate: hueDelegate,
+            light: $light,
+            animating: true
+        )
         return NavigationLink(destination: lightDetails) {
             Toggle(isOn: $light.isOn) {
                 Text(light.name)
@@ -26,8 +28,10 @@ struct LightRow: View {
 
 
 struct LightRow_Previews: PreviewProvider {
-    
     static var previews: some View {
-        LightRow(light: .constant(lightData[0]))
+        LightRow(
+            hueDelegate: HueDelegate(),
+            light: .constant(lightData[0])
+        )
     }
 }
