@@ -69,7 +69,7 @@ class HueDelegate: ObservableObject {
         }
     }
     
-    func setColor(to light: Light, red: Double, green: Double, blue: Double) {
+    func setColor(to light: Light, red: Int, green: Int, blue: Int) {
         let cie = Utils.rgbToCie(red, green, blue)
         setColor(to: light, cie: cie)
     }
@@ -135,24 +135,30 @@ class HueDelegate: ObservableObject {
         
     func userLoaded() {
         print("Current user loaded: \(hueUser!)")
-        getLights()
-    }
-    
-    func getLights() {
-        let url = "http://\(bridgeIp!)/api/\(hueUser!)/lights"
-        Utils.httpRequest(endpoint: url, method: .get, params: nil) { result in
+        getLights { result in
             switch(result) {
             case .success(let lights):
-                DispatchQueue.main.async {
-                    self.lights = self.createLights(from: lights)
-                }
+               DispatchQueue.main.async {
+                   self.lights = lights
+               }
             case .failure(let err): print(err)
             }
-            
         }
     }
     
-    func createLights(from lights: [String: Any]) -> [Light] {
+    func getLights(_ completion: @escaping (Result<[Light], Error>) -> Void) {
+        let url = "http://\(bridgeIp!)/api/\(hueUser!)/lights"
+        Utils.httpRequest(endpoint: url, method: .get, params: nil) { result in
+            switch result {
+            case .success(let dictLights):
+                let lights = self.createLights(from: dictLights)
+                completion(.success(lights))
+            case .failure(let err): completion(.failure(err))
+            }
+        }
+    }
+    
+    func createLights(from lights: Dict) -> [Light] {
         return lights.keys.reduce([]) {(result, key) in
             if let dict = lights[key] as? [String: Any], let light = Light.decode(id: key, dict: dict) {
                 return result + [light]
@@ -166,12 +172,12 @@ class HueDelegate: ObservableObject {
         return light.description
     }
     
-    func sendToLight(light: Light, message: [String: Any], completion: @escaping (Result<[String: Any], Error>) -> Void) {
+    func sendToLight(light: Light, message: Dict, completion: @escaping (Result<[String: Any], Error>) -> Void) {
         let url = "http://\(bridgeIp!)/api/\(hueUser!)/lights/\(light.id)/state"
         Utils.httpRequest(endpoint: url, method: .put, params: message) { completion($0) }
     }
     
-    func sendToLight(light: Light, message: [String: Any]) {
+    func sendToLight(light: Light, message: Dict) {
         let url = "http://\(bridgeIp!)/api/\(hueUser!)/lights/\(light.id)/state"
         Utils.httpRequest(endpoint: url, method: .put, params: message) { result in
             switch result {

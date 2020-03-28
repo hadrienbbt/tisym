@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var hueDelegate = HueDelegate()
+    @ObservedObject var hueDelegate: HueDelegate
     
     @ViewBuilder
     var body: some View {
@@ -30,6 +30,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(hueDelegate: HueDelegate())
     }
 }

@@ -13,7 +13,7 @@ struct WatchLightList: View {
     
     var body: some View {
         List {
-            ForEach(hueDelegate.lights.indices) { i in
+            ForEach(hueDelegate.lights.indices, id: \.description) { i in
                 LightRow(
                     hueDelegate: self.hueDelegate,
                     light: self.$hueDelegate.lights[i]

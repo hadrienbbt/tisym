@@ -11,13 +11,13 @@ import SwiftUI
 struct LigthDetail: View {
     @ObservedObject var hueDelegate: HueDelegate
     @Binding var light: Light
-    @State var animating: Bool = false
+    @State private var animating = false
+    @State private var timer: Timer?
+    @State private var currentColor = colorData[0]
     
-    func toggleAnimation() {
-        self.animating = !self.animating
-    }
+    let colorRange = colorData
     
-    func addLightness() {
+    func addBrightness() {
         self.hueDelegate.setBrightness(to: light, light.brightness! + 20)
     }
     
@@ -37,6 +37,30 @@ struct LigthDetail: View {
         self.hueDelegate.setColor(to: light, red: 0, green: 255, blue: 0)
     }
     
+    func getNextColor() -> Color {
+        if let i = colorRange.firstIndex(where: { $0.id == self.currentColor.id }) {
+            if i == colorRange.count - 1 {
+                return colorRange[0]
+            } else {
+                return colorRange[i + 1]
+            }
+        }
+        return colorRange[0]
+    }
+    
+    func startAnimation() {
+        self.animating = true
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+            self.currentColor = self.getNextColor()
+            self.hueDelegate.setColor(to: self.light, red: self.currentColor.red, green: self.currentColor.green, blue: self.currentColor.blue)
+        }
+    }
+    
+    func stopAnimation() {
+        self.animating = false
+        self.timer?.invalidate()
+    }
+    
     var body: some View {
         List {
             Toggle(isOn: $light.isOn) {
@@ -44,25 +68,38 @@ struct LigthDetail: View {
             }
             if light.isBulb() {
                 #if os(watchOS)
-                    Text("Stepper unavailable on WatchOS")
+                HStack {
+                    Text("Brightness")
+                    Spacer()
+                    Button(action: self.reduceBrightness) {
+                        Image(systemName: "minus")
+                    }
+                    Button(action: self.addBrightness) {
+                        Image(systemName: "plus")
+                    }
+                }
                 #else
-                    Stepper(onIncrement: self.addLightness, onDecrement: self.reduceBrightness) {
+                    Stepper(onIncrement: self.addBrightness, onDecrement: self.reduceBrightness) {
                         Text("Brightness")
                     }
                 #endif
             }
             if light.isColor() {
-                Button(action: { self.red() }) { Text("Red") }
-                Button(action: { self.blue() }) { Text("Blue") }
-                Button(action: { self.green() }) { Text("Green") }
+                Button(action: self.red) { Text("Red") }
+                Button(action: self.blue) { Text("Blue") }
+                Button(action: self.green) { Text("Green") }
+                Button(action: self.animating ? self.stopAnimation : self.startAnimation) {
+                    Text(self.animating ? "Stop animation" : "Start animation")
+                }
             }
         }
         .navigationBarTitle(Text(light.name))
+        .onDisappear(perform: self.stopAnimation)
     }
 }
 
 struct LigthDetail_Previews: PreviewProvider {
     static var previews: some View {
-        LigthDetail(hueDelegate: HueDelegate(), light: .constant(lightData[0]), animating: true)
+        LigthDetail(hueDelegate: HueDelegate(), light: .constant(lightData[0]))
     }
 }

@@ -20,7 +20,7 @@
 		48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
 		48305FED2423D35A00F64BB4 /* LightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEC2423D35A00F64BB4 /* LightList.swift */; };
 		48305FF42423DEAD00F64BB4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF32423DEAD00F64BB4 /* Data.swift */; };
-		48305FF62423DED800F64BB4 /* lightData.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF52423DED800F64BB4 /* lightData.json */; };
+		48305FF62423DED800F64BB4 /* mockColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF52423DED800F64BB4 /* mockColors.json */; };
 		48305FF82423E1D100F64BB4 /* mockLights.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF72423E1D100F64BB4 /* mockLights.json */; };
 		48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
 		48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FFB242427C100F64BB4 /* SmartPlug.swift */; };
@@ -57,6 +57,8 @@
 		487DFB012425539500163D0C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
 		487DFB022425539800163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
 		487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487EFD562425695F0002DFB0 /* ContextMenu.swift */; };
+		48AD03E42428CB6F002E56CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD03E32428CB6F002E56CA /* Color.swift */; };
+		48AD03E52428CB6F002E56CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD03E32428CB6F002E56CA /* Color.swift */; };
 		48DAB2F92424B9DE00C3F073 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
 		48FD66372422B23800EA2FA4 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
 /* End PBXBuildFile section */
@@ -119,7 +121,7 @@
 		48305FEA2423D2E400F64BB4 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		48305FEC2423D35A00F64BB4 /* LightList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightList.swift; sourceTree = "<group>"; };
 		48305FF32423DEAD00F64BB4 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		48305FF52423DED800F64BB4 /* lightData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lightData.json; sourceTree = "<group>"; };
+		48305FF52423DED800F64BB4 /* mockColors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockColors.json; sourceTree = "<group>"; };
 		48305FF72423E1D100F64BB4 /* mockLights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockLights.json; sourceTree = "<group>"; };
 		48305FF92423E2DF00F64BB4 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
 		48305FFB242427C100F64BB4 /* SmartPlug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlug.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 		487DFAE72425512D00163D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		487DFAE82425512D00163D0C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		487EFD562425695F0002DFB0 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
+		48AD03E32428CB6F002E56CA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		48DAB2F82424B9DE00C3F073 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +226,7 @@
 				48305FFB242427C100F64BB4 /* SmartPlug.swift */,
 				487DFABC2424E90E00163D0C /* HueError.swift */,
 				48758DAC24277D7F00380126 /* HueDevice.swift */,
+				48AD03E32428CB6F002E56CA /* Color.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -255,7 +259,7 @@
 			children = (
 				487964A42426C0EB0025B897 /* NotificationName.swift */,
 				48305FF32423DEAD00F64BB4 /* Data.swift */,
-				48305FF52423DED800F64BB4 /* lightData.json */,
+				48305FF52423DED800F64BB4 /* mockColors.json */,
 				48305FF72423E1D100F64BB4 /* mockLights.json */,
 			);
 			path = Ressources;
@@ -426,7 +430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4814CF0024214BAD00B9C272 /* LaunchScreen.storyboard in Resources */,
-				48305FF62423DED800F64BB4 /* lightData.json in Resources */,
+				48305FF62423DED800F64BB4 /* mockColors.json in Resources */,
 				4814CEFD24214BAD00B9C272 /* Preview Assets.xcassets in Resources */,
 				48305FF82423E1D100F64BB4 /* mockLights.json in Resources */,
 				4814CEFA24214BAD00B9C272 /* Assets.xcassets in Resources */,
@@ -478,6 +482,7 @@
 				487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */,
 				487DFABD2424E90E00163D0C /* HueError.swift in Sources */,
 				48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */,
+				48AD03E42428CB6F002E56CA /* Color.swift in Sources */,
 				48758DAD24277D7F00380126 /* HueDevice.swift in Sources */,
 				4814CEF624214BA500B9C272 /* SceneDelegate.swift in Sources */,
 				48305FED2423D35A00F64BB4 /* LightList.swift in Sources */,
@@ -493,6 +498,7 @@
 			files = (
 				487DFAF9242552DE00163D0C /* Light.swift in Sources */,
 				487DFAFB242552E700163D0C /* LoginHue.swift in Sources */,
+				48AD03E52428CB6F002E56CA /* Color.swift in Sources */,
 				487964A32426B7E80025B897 /* LigthDetail.swift in Sources */,
 				487DFADB2425512B00163D0C /* HostingController.swift in Sources */,
 				487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */,

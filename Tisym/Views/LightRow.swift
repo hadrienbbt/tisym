@@ -15,8 +15,7 @@ struct LightRow: View {
     var body: some View {
         let lightDetails = LigthDetail(
             hueDelegate: hueDelegate,
-            light: $light,
-            animating: true
+            light: $light
         )
         return NavigationLink(destination: lightDetails) {
             Toggle(isOn: $light.isOn) {

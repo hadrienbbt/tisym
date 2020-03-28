@@ -17,17 +17,21 @@ struct CieColor: Decodable, Encodable, Equatable, Hashable {
 
 class Utils {
     
-    static func rgbToHex(_ red: Float, _ green: Float, _ blue: Float) -> String {
-        return String(format:"%02X", Int(red)) + String(format:"%02X", Int(green)) + String(format:"%02X", Int(blue))
+    static func rgbToHex(_ red: Int, _ green: Int, _ blue: Int) -> String {
+        return String(format:"%02X", red) + String(format:"%02X", green) + String(format:"%02X", blue)
     }
     
     // From: https://github.com/usolved/cie-rgb-converter/blob/master/cie_rgb_converter.js
-    static func rgbToCie(_ red: Double, _ green: Double, _ blue: Double) -> CieColor
+    static func rgbToCie(_ red: Int, _ green: Int, _ blue: Int) -> CieColor
     {
         //Apply a gamma correction to the RGB values, which makes the color more vivid and more the like the color displayed on the screen of your device
-        let red = (red > 0.04045) ? pow((red + 0.055) / (1.0 + 0.055), 2.4) : (red / 12.92)
-        let green = (green > 0.04045) ? pow((green + 0.055) / (1.0 + 0.055), 2.4) : (green / 12.92)
-        let blue = (blue > 0.04045) ? pow((blue + 0.055) / (1.0 + 0.055), 2.4) : (blue / 12.92)
+        let doubleRed = Double(red)
+        let doubleGreen = Double(green)
+        let doubleBlue = Double(blue)
+        
+        let red = (doubleRed > 0.04045) ? pow((doubleRed + 0.055) / (1.0 + 0.055), 2.4) : (doubleRed / 12.92)
+        let green = (doubleGreen > 0.04045) ? pow((doubleGreen + 0.055) / (1.0 + 0.055), 2.4) : (doubleGreen / 12.92)
+        let blue = (doubleBlue > 0.04045) ? pow((doubleBlue + 0.055) / (1.0 + 0.055), 2.4) : (doubleBlue / 12.92)
         
         //RGB values to XYZ using the Wide RGB D65 conversion formula
         let X = red * 0.664511 + green * 0.154324 + blue * 0.162028
