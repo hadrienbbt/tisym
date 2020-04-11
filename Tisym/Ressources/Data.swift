@@ -10,7 +10,8 @@ import SwiftUI
 import CoreLocation
 
 let lightData: [Light] = load("mockLights.json")
-let colorData: [Color] = load("mockColors.json")
+let colorRGBData: [ColorRGB] = load("mockColors.json")
+let colorHexData: [ColorHex] = load("indigo.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

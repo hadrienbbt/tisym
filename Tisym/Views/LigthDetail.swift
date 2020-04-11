@@ -13,9 +13,9 @@ struct LigthDetail: View {
     @Binding var light: Light
     @State private var animating = false
     @State private var timer: Timer?
-    @State private var currentColor = colorData[0]
+    @State private var currentColor = Color(hex: colorHexData[0])
     
-    let colorRange = colorData
+    let colorRange = colorHexData.map { Color(hex: $0) }
     
     func addBrightness() {
         self.hueDelegate.setBrightness(to: light, light.brightness! + 20)
@@ -37,6 +37,18 @@ struct LigthDetail: View {
         self.hueDelegate.setColor(to: light, red: 0, green: 255, blue: 0)
     }
     
+    func white() {
+        self.hueDelegate.setColor(to: light, hex: "#ffffff")
+    }
+    
+    func black() {
+        self.hueDelegate.setColor(to: light, hex: "#000000")
+    }
+    
+    func equilab() {
+        self.hueDelegate.setColor(to: light, hex: "#ED6C44")
+    }
+    
     func getNextColor() -> Color {
         if let i = colorRange.firstIndex(where: { $0.id == self.currentColor.id }) {
             if i == colorRange.count - 1 {
@@ -50,8 +62,9 @@ struct LigthDetail: View {
     
     func startAnimation() {
         self.animating = true
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { _ in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             self.currentColor = self.getNextColor()
+            print("n° \(self.currentColor.id)")
             self.hueDelegate.setColor(to: self.light, red: self.currentColor.red, green: self.currentColor.green, blue: self.currentColor.blue)
         }
     }
@@ -88,6 +101,9 @@ struct LigthDetail: View {
                 Button(action: self.red) { Text("Red") }
                 Button(action: self.blue) { Text("Blue") }
                 Button(action: self.green) { Text("Green") }
+                Button(action: self.white) { Text("White") }
+                Button(action: self.black) { Text("Black") }
+                Button(action: self.equilab) { Text("Equilab") }
                 Button(action: self.animating ? self.stopAnimation : self.startAnimation) {
                     Text(self.animating ? "Stop animation" : "Start animation")
                 }

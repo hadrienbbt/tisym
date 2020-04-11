@@ -62,7 +62,7 @@ class HueDelegate: ObservableObject {
         if !light.isOn {
             sendToLight(light: light, message: ["on": true])
         }
-        sendToLight(light: light, message: ["xy": [cie.x, cie.y], "colormode": "xy"])
+        sendToLight(light: light, message: ["xy": [cie.x, cie.y]])
         if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
             self.lights[i].isOn = true
             self.lights[i].cieColor = cie
@@ -71,6 +71,11 @@ class HueDelegate: ObservableObject {
     
     func setColor(to light: Light, red: Int, green: Int, blue: Int) {
         let cie = Utils.rgbToCie(red, green, blue)
+        setColor(to: light, cie: cie)
+    }
+    
+    func setColor(to light: Light, hex: String) {
+        let cie = Utils.hexToCie(hex)
         setColor(to: light, cie: cie)
     }
     

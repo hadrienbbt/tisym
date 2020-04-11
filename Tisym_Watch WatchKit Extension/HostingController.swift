@@ -20,6 +20,6 @@ struct MainView : View {
     let hueDelegate = HueDelegate()
     
     var body: some View {
-        ContentView()
+        ContentView(hueDelegate: HueDelegate())
     }
 }

@@ -17,6 +17,8 @@
 		4814CF0024214BAD00B9C272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814CEFE24214BAD00B9C272 /* LaunchScreen.storyboard */; };
 		4814CF0824214C9700B9C272 /* HueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0724214C9700B9C272 /* HueDelegate.swift */; };
 		4814CF0A24214E1200B9C272 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0924214E1200B9C272 /* Utils.swift */; };
+		482C546A2441EB0A00842CED /* indigo.json in Resources */ = {isa = PBXBuildFile; fileRef = 482C54692441EB0A00842CED /* indigo.json */; };
+		482C546B2441EB0A00842CED /* indigo.json in Resources */ = {isa = PBXBuildFile; fileRef = 482C54692441EB0A00842CED /* indigo.json */; };
 		48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
 		48305FED2423D35A00F64BB4 /* LightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEC2423D35A00F64BB4 /* LightList.swift */; };
 		48305FF42423DEAD00F64BB4 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF32423DEAD00F64BB4 /* Data.swift */; };
@@ -118,6 +120,7 @@
 		4814CF0724214C9700B9C272 /* HueDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueDelegate.swift; sourceTree = "<group>"; };
 		4814CF0924214E1200B9C272 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		4814CF0B24214FBF00B9C272 /* Light.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Light.swift; sourceTree = "<group>"; };
+		482C54692441EB0A00842CED /* indigo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = indigo.json; sourceTree = "<group>"; };
 		48305FEA2423D2E400F64BB4 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		48305FEC2423D35A00F64BB4 /* LightList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightList.swift; sourceTree = "<group>"; };
 		48305FF32423DEAD00F64BB4 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
@@ -259,6 +262,7 @@
 			children = (
 				487964A42426C0EB0025B897 /* NotificationName.swift */,
 				48305FF32423DEAD00F64BB4 /* Data.swift */,
+				482C54692441EB0A00842CED /* indigo.json */,
 				48305FF52423DED800F64BB4 /* mockColors.json */,
 				48305FF72423E1D100F64BB4 /* mockLights.json */,
 			);
@@ -434,6 +438,7 @@
 				4814CEFD24214BAD00B9C272 /* Preview Assets.xcassets in Resources */,
 				48305FF82423E1D100F64BB4 /* mockLights.json in Resources */,
 				4814CEFA24214BAD00B9C272 /* Assets.xcassets in Resources */,
+				482C546A2441EB0A00842CED /* indigo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +464,7 @@
 			files = (
 				487DFAE62425512D00163D0C /* Preview Assets.xcassets in Resources */,
 				487DFAE32425512D00163D0C /* Assets.xcassets in Resources */,
+				482C546B2441EB0A00842CED /* indigo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
