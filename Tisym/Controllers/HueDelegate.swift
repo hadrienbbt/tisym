@@ -9,28 +9,46 @@
 import Foundation
 import Combine
 import UIKit
+import Intents
 
 class HueDelegate: ObservableObject {
         
-    let valueStore = ValueStore()
+    let sharedDefaultsMeta = SharedDefaultsMeta()
     
     @Published var bridgeIp: String? {
-        willSet(newValue) { valueStore.bridgeIp = newValue }
+        willSet(newValue) { sharedDefaultsMeta.bridgeIp = newValue }
     }
     @Published var hueUser: String? {
-        willSet(newValue) { valueStore.hueUser = newValue }
+        willSet(newValue) { sharedDefaultsMeta.hueUser = newValue }
     }
     
     @Published var lights = [Light]() {
         willSet {
+            sharedDefaultsMeta.lights = newValue
             self.updateLights(lights: newValue)
         }
     }
     
     init() {
-        bridgeIp = valueStore.bridgeIp
-        hueUser = valueStore.hueUser
+        bridgeIp = sharedDefaultsMeta.bridgeIp
+        hueUser = sharedDefaultsMeta.hueUser
         fetchBridge()
+    }
+    
+    init(_ completion: @escaping (Result<[Light], Error>) -> Void) {
+        guard let bridgeIp = sharedDefaultsMeta.bridgeIp,
+              let hueUser = sharedDefaultsMeta.hueUser else {
+            completion(.failure(HueError("No user logged in")))
+            return
+        }
+        self.bridgeIp = bridgeIp
+        self.hueUser = hueUser
+        getLights { result in
+            switch(result) {
+            case .success(let lights): completion(.success(lights))
+            case .failure(let err): completion(.failure(err))
+            }
+        }
     }
     
     func logout() {
@@ -51,7 +69,12 @@ class HueDelegate: ObservableObject {
         if !light.isOn {
             sendToLight(light: light, message: ["on": true])
         }
-        sendToLight(light: light, message: ["bri": brightness])
+        sendToLight(light: light, message: ["bri": brightness]) { result in
+            switch result {
+            case .success(let result): print(result)
+            case .failure(let err): print(HueError(err.localizedDescription))
+            }
+        }
         if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
             self.lights[i].isOn = true
             self.lights[i].brightness = brightness
@@ -70,12 +93,12 @@ class HueDelegate: ObservableObject {
     }
     
     func setColor(to light: Light, red: Int, green: Int, blue: Int) {
-        let cie = Utils.rgbToCie(red, green, blue)
+        let cie = Color.rgbToCie(red, green, blue)
         setColor(to: light, cie: cie)
     }
     
     func setColor(to light: Light, hex: String) {
-        let cie = Utils.hexToCie(hex)
+        let cie = Color.hexToCie(hex)
         setColor(to: light, cie: cie)
     }
     
@@ -161,6 +184,23 @@ class HueDelegate: ObservableObject {
             case .failure(let err): completion(.failure(err))
             }
         }
+    }
+    
+    func donateIntent() {
+        let intent = DimLightIntent()
+        if #available(iOS 14.0, *) {
+            intent.shortcutAvailability = .sleepWrapUpYourDay
+        }
+        intent.suggestedInvocationPhrase = "Dim the lights"
+        let interaction = INInteraction(intent: intent, response: nil)
+        interaction.donate { error in
+            if let error = error {
+                print("Could not donate interaction", error)
+                return
+            }
+            print("Successfully donated DimLightIntent interaction")
+        }
+
     }
     
     func createLights(from lights: Dict) -> [Light] {

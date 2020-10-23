@@ -36,7 +36,6 @@
 		487964A62426C0EB0025B897 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487964A42426C0EB0025B897 /* NotificationName.swift */; };
 		487DFAB72424D7FC00163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
 		487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
-		487DFABD2424E90E00163D0C /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABC2424E90E00163D0C /* HueError.swift */; };
 		487DFAC52425512500163D0C /* Tisym_Watch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 487DFAC42425512500163D0C /* Tisym_Watch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		487DFACB2425512500163D0C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAC92425512500163D0C /* Interface.storyboard */; };
 		487DFACD2425512B00163D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFACC2425512B00163D0C /* Assets.xcassets */; };
@@ -48,7 +47,6 @@
 		487DFAE32425512D00163D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAE22425512D00163D0C /* Assets.xcassets */; };
 		487DFAE62425512D00163D0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAE52425512D00163D0C /* Preview Assets.xcassets */; };
 		487DFAF5242552CE00163D0C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF32423DEAD00F64BB4 /* Data.swift */; };
-		487DFAF7242552D400163D0C /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABC2424E90E00163D0C /* HueError.swift */; };
 		487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FFB242427C100F64BB4 /* SmartPlug.swift */; };
 		487DFAF9242552DE00163D0C /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
 		487DFAFA242552E300163D0C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
@@ -61,7 +59,28 @@
 		487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487EFD562425695F0002DFB0 /* ContextMenu.swift */; };
 		48AD03E42428CB6F002E56CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD03E32428CB6F002E56CA /* Color.swift */; };
 		48AD03E52428CB6F002E56CA /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD03E32428CB6F002E56CA /* Color.swift */; };
+		48CF4B1925228B8E006AE8D0 /* Brightness Intent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 48CF4B1225228B8E006AE8D0 /* Brightness Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		48CF4B2525228BD2006AE8D0 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B2425228BD2006AE8D0 /* IntentHandler.swift */; };
+		48CF4B2C25228C4F006AE8D0 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B2B25228C4F006AE8D0 /* Intents.intentdefinition */; };
+		48CF4B4725229261006AE8D0 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B2425228BD2006AE8D0 /* IntentHandler.swift */; };
+		48CF4B4D25229295006AE8D0 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B2B25228C4F006AE8D0 /* Intents.intentdefinition */; };
+		48CF4B5325229E11006AE8D0 /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
+		48CF4B6B25229EEE006AE8D0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
+		48CF4B7125229EFF006AE8D0 /* HueDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAC24277D7F00380126 /* HueDevice.swift */; };
+		48CF4B922522A5B9006AE8D0 /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B912522A5B9006AE8D0 /* HueError.swift */; };
+		48CF4B932522A5B9006AE8D0 /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B912522A5B9006AE8D0 /* HueError.swift */; };
+		48CF4BB22522A710006AE8D0 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4BB12522A710006AE8D0 /* JsonParser.swift */; };
+		48CF4BB32522A710006AE8D0 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4BB12522A710006AE8D0 /* JsonParser.swift */; };
+		48CF4BB42522A710006AE8D0 /* JsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4BB12522A710006AE8D0 /* JsonParser.swift */; };
+		48CF4BBF2522A741006AE8D0 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0924214E1200B9C272 /* Utils.swift */; };
+		48CF4BC52522A7F6006AE8D0 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
+		48CF4BCB2522A85B006AE8D0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD03E32428CB6F002E56CA /* Color.swift */; };
+		48CF4BD12522A874006AE8D0 /* HueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0724214C9700B9C272 /* HueDelegate.swift */; };
+		48CF4BD72522A885006AE8D0 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
 		48DAB2F92424B9DE00C3F073 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
+		48E71442252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E71441252383B5005B9A2C /* SharedDefaultsMeta.swift */; };
+		48E71443252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E71441252383B5005B9A2C /* SharedDefaultsMeta.swift */; };
+		48E71444252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E71441252383B5005B9A2C /* SharedDefaultsMeta.swift */; };
 		48FD66372422B23800EA2FA4 /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +98,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 487DFAD22425512B00163D0C;
 			remoteInfo = "Tisym_Watch WatchKit Extension";
+		};
+		48CF4B1725228B8E006AE8D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4814CEE824214BA500B9C272 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48CF4B1125228B8E006AE8D0;
+			remoteInfo = "Brightness Intent";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -103,6 +129,17 @@
 				487DFAC52425512500163D0C /* Tisym_Watch WatchKit App.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48CF4B1B25228B8E006AE8D0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				48CF4B1925228B8E006AE8D0 /* Brightness Intent.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -134,7 +171,6 @@
 		487964A42426C0EB0025B897 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		487DFAB62424D7FC00163D0C /* ValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueStore.swift; sourceTree = "<group>"; };
 		487DFABA2424DCBB00163D0C /* LoginHue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHue.swift; sourceTree = "<group>"; };
-		487DFABC2424E90E00163D0C /* HueError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueError.swift; sourceTree = "<group>"; };
 		487DFABE2425487D00163D0C /* Tisym.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tisym.entitlements; sourceTree = "<group>"; };
 		487DFAC12425512500163D0C /* Tisym_Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tisym_Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		487DFAC42425512500163D0C /* Tisym_Watch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tisym_Watch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +188,16 @@
 		487DFAE82425512D00163D0C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		487EFD562425695F0002DFB0 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
 		48AD03E32428CB6F002E56CA /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		48CF4B1225228B8E006AE8D0 /* Brightness Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Brightness Intent.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48CF4B1625228B8E006AE8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48CF4B1A25228B8E006AE8D0 /* Brightness Intent.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Brightness Intent.entitlements"; sourceTree = "<group>"; };
+		48CF4B2425228BD2006AE8D0 /* IntentHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		48CF4B2B25228C4F006AE8D0 /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		48CF4B912522A5B9006AE8D0 /* HueError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HueError.swift; sourceTree = "<group>"; };
+		48CF4BB12522A710006AE8D0 /* JsonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonParser.swift; sourceTree = "<group>"; };
 		48DAB2F82424B9DE00C3F073 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		48E71441252383B5005B9A2C /* SharedDefaultsMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedDefaultsMeta.swift; sourceTree = "<group>"; };
+		48E7144A25238486005B9A2C /* Tisym_Watch WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Tisym_Watch WatchKit App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,15 +215,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48CF4B0F25228B8E006AE8D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		4814CEE724214BA500B9C272 = {
 			isa = PBXGroup;
 			children = (
+				48CF4B2B25228C4F006AE8D0 /* Intents.intentdefinition */,
 				4814CEF224214BA500B9C272 /* Tisym */,
 				487DFAC82425512500163D0C /* Tisym_Watch WatchKit App */,
 				487DFAD72425512B00163D0C /* Tisym_Watch WatchKit Extension */,
+				48CF4B1325228B8E006AE8D0 /* Brightness Intent */,
 				4814CEF124214BA500B9C272 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -190,6 +244,7 @@
 				487DFAC12425512500163D0C /* Tisym_Watch.app */,
 				487DFAC42425512500163D0C /* Tisym_Watch WatchKit App.app */,
 				487DFAD32425512B00163D0C /* Tisym_Watch WatchKit Extension.appex */,
+				48CF4B1225228B8E006AE8D0 /* Brightness Intent.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,6 +263,7 @@
 				4814CEFB24214BAD00B9C272 /* Preview Content */,
 				4814CF0924214E1200B9C272 /* Utils.swift */,
 				48DAB2F82424B9DE00C3F073 /* extensions.swift */,
+				48E71441252383B5005B9A2C /* SharedDefaultsMeta.swift */,
 				487DFAB62424D7FC00163D0C /* ValueStore.swift */,
 			);
 			path = Tisym;
@@ -227,8 +283,8 @@
 				48305FEA2423D2E400F64BB4 /* UserData.swift */,
 				4814CF0B24214FBF00B9C272 /* Light.swift */,
 				48305FFB242427C100F64BB4 /* SmartPlug.swift */,
-				487DFABC2424E90E00163D0C /* HueError.swift */,
 				48758DAC24277D7F00380126 /* HueDevice.swift */,
+				48CF4B912522A5B9006AE8D0 /* HueError.swift */,
 				48AD03E32428CB6F002E56CA /* Color.swift */,
 			);
 			path = Models;
@@ -262,6 +318,7 @@
 			children = (
 				487964A42426C0EB0025B897 /* NotificationName.swift */,
 				48305FF32423DEAD00F64BB4 /* Data.swift */,
+				48CF4BB12522A710006AE8D0 /* JsonParser.swift */,
 				482C54692441EB0A00842CED /* indigo.json */,
 				48305FF52423DED800F64BB4 /* mockColors.json */,
 				48305FF72423E1D100F64BB4 /* mockLights.json */,
@@ -272,6 +329,7 @@
 		487DFAC82425512500163D0C /* Tisym_Watch WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				48E7144A25238486005B9A2C /* Tisym_Watch WatchKit App.entitlements */,
 				487DFAC92425512500163D0C /* Interface.storyboard */,
 				487DFACC2425512B00163D0C /* Assets.xcassets */,
 				487DFACE2425512B00163D0C /* Info.plist */,
@@ -312,6 +370,16 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		48CF4B1325228B8E006AE8D0 /* Brightness Intent */ = {
+			isa = PBXGroup;
+			children = (
+				48CF4B1A25228B8E006AE8D0 /* Brightness Intent.entitlements */,
+				48CF4B2425228BD2006AE8D0 /* IntentHandler.swift */,
+				48CF4B1625228B8E006AE8D0 /* Info.plist */,
+			);
+			path = "Brightness Intent";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -322,10 +390,12 @@
 				4814CEEC24214BA500B9C272 /* Sources */,
 				4814CEED24214BA500B9C272 /* Frameworks */,
 				4814CEEE24214BA500B9C272 /* Resources */,
+				48CF4B1B25228B8E006AE8D0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				48CF4B1825228B8E006AE8D0 /* PBXTargetDependency */,
 			);
 			name = Tisym;
 			productName = Tisym;
@@ -383,13 +453,30 @@
 			productReference = 487DFAD32425512B00163D0C /* Tisym_Watch WatchKit Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
+		48CF4B1125228B8E006AE8D0 /* Brightness Intent */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48CF4B1E25228B8E006AE8D0 /* Build configuration list for PBXNativeTarget "Brightness Intent" */;
+			buildPhases = (
+				48CF4B0E25228B8E006AE8D0 /* Sources */,
+				48CF4B0F25228B8E006AE8D0 /* Frameworks */,
+				48CF4B1025228B8E006AE8D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Brightness Intent";
+			productName = "Brightness Intent";
+			productReference = 48CF4B1225228B8E006AE8D0 /* Brightness Intent.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		4814CEE824214BA500B9C272 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Hadrien Barbat";
 				TargetAttributes = {
@@ -398,12 +485,17 @@
 					};
 					487DFAC02425512500163D0C = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1200;
 					};
 					487DFAC32425512500163D0C = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1200;
 					};
 					487DFAD22425512B00163D0C = {
 						CreatedOnToolsVersion = 11.3.1;
+					};
+					48CF4B1125228B8E006AE8D0 = {
+						CreatedOnToolsVersion = 12.0;
 					};
 				};
 			};
@@ -424,6 +516,7 @@
 				487DFAC02425512500163D0C /* Tisym_Watch */,
 				487DFAC32425512500163D0C /* Tisym_Watch WatchKit App */,
 				487DFAD22425512B00163D0C /* Tisym_Watch WatchKit Extension */,
+				48CF4B1125228B8E006AE8D0 /* Brightness Intent */,
 			);
 		};
 /* End PBXProject section */
@@ -468,6 +561,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		48CF4B1025228B8E006AE8D0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -479,16 +579,20 @@
 				48305FF42423DEAD00F64BB4 /* Data.swift in Sources */,
 				48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */,
 				48758DAF2427999C00380126 /* NoBridge.swift in Sources */,
+				48CF4B4725229261006AE8D0 /* IntentHandler.swift in Sources */,
 				48FD66372422B23800EA2FA4 /* Light.swift in Sources */,
 				4814CF0A24214E1200B9C272 /* Utils.swift in Sources */,
+				48CF4BB22522A710006AE8D0 /* JsonParser.swift in Sources */,
 				48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */,
 				4814CEF424214BA500B9C272 /* AppDelegate.swift in Sources */,
 				487964A22426B7E80025B897 /* LigthDetail.swift in Sources */,
 				4814CF0824214C9700B9C272 /* HueDelegate.swift in Sources */,
 				487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */,
-				487DFABD2424E90E00163D0C /* HueError.swift in Sources */,
 				48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */,
+				48CF4B922522A5B9006AE8D0 /* HueError.swift in Sources */,
+				48CF4B4D25229295006AE8D0 /* Intents.intentdefinition in Sources */,
 				48AD03E42428CB6F002E56CA /* Color.swift in Sources */,
+				48E71442252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */,
 				48758DAD24277D7F00380126 /* HueDevice.swift in Sources */,
 				4814CEF624214BA500B9C272 /* SceneDelegate.swift in Sources */,
 				48305FED2423D35A00F64BB4 /* LightList.swift in Sources */,
@@ -509,6 +613,7 @@
 				487DFADB2425512B00163D0C /* HostingController.swift in Sources */,
 				487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */,
 				487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */,
+				48CF4BB32522A710006AE8D0 /* JsonParser.swift in Sources */,
 				487DFB002425539100163D0C /* Utils.swift in Sources */,
 				487DFAF5242552CE00163D0C /* Data.swift in Sources */,
 				487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */,
@@ -517,14 +622,34 @@
 				487DFADF2425512B00163D0C /* NotificationController.swift in Sources */,
 				487DFB012425539500163D0C /* extensions.swift in Sources */,
 				480EDEA32425797200E8232F /* WatchLightList.swift in Sources */,
-				487DFAF7242552D400163D0C /* HueError.swift in Sources */,
 				487DFADD2425512B00163D0C /* ExtensionDelegate.swift in Sources */,
+				48E71443252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */,
 				487DFB022425539800163D0C /* ValueStore.swift in Sources */,
 				487964A62426C0EB0025B897 /* NotificationName.swift in Sources */,
 				48758DB12427AD8500380126 /* HueDevice.swift in Sources */,
 				487DFAFA242552E300163D0C /* UserData.swift in Sources */,
 				48758DB02427999C00380126 /* NoBridge.swift in Sources */,
 				487DFAE12425512B00163D0C /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48CF4B0E25228B8E006AE8D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48CF4BC52522A7F6006AE8D0 /* Light.swift in Sources */,
+				48CF4B2C25228C4F006AE8D0 /* Intents.intentdefinition in Sources */,
+				48CF4BB42522A710006AE8D0 /* JsonParser.swift in Sources */,
+				48CF4BCB2522A85B006AE8D0 /* Color.swift in Sources */,
+				48CF4B6B25229EEE006AE8D0 /* extensions.swift in Sources */,
+				48CF4B7125229EFF006AE8D0 /* HueDevice.swift in Sources */,
+				48CF4BD72522A885006AE8D0 /* UserData.swift in Sources */,
+				48CF4BD12522A874006AE8D0 /* HueDelegate.swift in Sources */,
+				48CF4B5325229E11006AE8D0 /* ValueStore.swift in Sources */,
+				48CF4B932522A5B9006AE8D0 /* HueError.swift in Sources */,
+				48CF4B2525228BD2006AE8D0 /* IntentHandler.swift in Sources */,
+				48E71444252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */,
+				48CF4BBF2522A741006AE8D0 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +665,11 @@
 			isa = PBXTargetDependency;
 			target = 487DFAD22425512B00163D0C /* Tisym_Watch WatchKit Extension */;
 			targetProxy = 487DFAD52425512B00163D0C /* PBXContainerItemProxy */;
+		};
+		48CF4B1825228B8E006AE8D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48CF4B1125228B8E006AE8D0 /* Brightness Intent */;
+			targetProxy = 48CF4B1725228B8E006AE8D0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -680,6 +810,7 @@
 		4814CF0524214BAE00B9C272 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Tisym/Tisym.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -704,6 +835,7 @@
 		4814CF0624214BAE00B9C272 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Tisym/Tisym.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -778,14 +910,23 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Tisym_Watch WatchKit App/Tisym_Watch WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				IBSC_MODULE = Tisym_Watch_WatchKit_Extension;
 				INFOPLIST_FILE = "Tisym_Watch WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Tisym/Ressources/Tisym_Watch WatchKit App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.1;
@@ -797,14 +938,22 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Tisym_Watch WatchKit App/Tisym_Watch WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T7562M4U35;
 				IBSC_MODULE = Tisym_Watch_WatchKit_Extension;
 				INFOPLIST_FILE = "Tisym_Watch WatchKit App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Tisym/Ressources/Tisym_Watch WatchKit App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 6.1;
@@ -814,12 +963,20 @@
 		487DFAF22425512D00163D0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T7562M4U35;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tisym/Ressources/Tisym_Watch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -827,13 +984,66 @@
 		487DFAF32425512D00163D0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T7562M4U35;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym-Watch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Tisym/Ressources/Tisym_Watch-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		48CF4B1C25228B8E006AE8D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Brightness Intent/Brightness Intent.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				INFOPLIST_FILE = "Brightness Intent/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym.Brightness-Intent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48CF4B1D25228B8E006AE8D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Brightness Intent/Brightness Intent.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T7562M4U35;
+				INFOPLIST_FILE = "Brightness Intent/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "barbat.hadrien.Tisym.Brightness-Intent";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -881,6 +1091,15 @@
 			buildConfigurations = (
 				487DFAF22425512D00163D0C /* Debug */,
 				487DFAF32425512D00163D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48CF4B1E25228B8E006AE8D0 /* Build configuration list for PBXNativeTarget "Brightness Intent" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48CF4B1C25228B8E006AE8D0 /* Debug */,
+				48CF4B1D25228B8E006AE8D0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

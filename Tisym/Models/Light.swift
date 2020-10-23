@@ -43,7 +43,18 @@ struct Light: HueDevice {
         }
         return Light(id, productId, name, productName, isOn, isReachable, brightness)
     }
-    
+    /*
+    static func encode(_ lights: [Light]) {
+        var encoded = [String: String]()
+        lights.forEach { light in
+            
+            if let id = light.id {
+                light[id] = light.name
+            }
+        }
+        return encoded
+    }
+    */
     var description: String {
         let isOnStr = isOn ? "on" : "off"
         return "\(name) is \(isOnStr). "

@@ -19,10 +19,12 @@ struct LigthDetail: View {
     
     func addBrightness() {
         self.hueDelegate.setBrightness(to: light, light.brightness! + 20)
+//        self.hueDelegate.donateIntent(with: true)
     }
     
     func reduceBrightness() {
-         self.hueDelegate.setBrightness(to: light, light.brightness! - 20)
+        self.hueDelegate.setBrightness(to: light, light.brightness! - 20)
+        self.hueDelegate.donateIntent()
     }
     
     func red() {
