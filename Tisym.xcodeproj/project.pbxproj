@@ -17,6 +17,9 @@
 		4814CF0024214BAD00B9C272 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4814CEFE24214BAD00B9C272 /* LaunchScreen.storyboard */; };
 		4814CF0824214C9700B9C272 /* HueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0724214C9700B9C272 /* HueDelegate.swift */; };
 		4814CF0A24214E1200B9C272 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0924214E1200B9C272 /* Utils.swift */; };
+		481F91F32542F92F00914516 /* HueError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B912522A5B9006AE8D0 /* HueError.swift */; };
+		481F92082542FA0F00914516 /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B2B25228C4F006AE8D0 /* Intents.intentdefinition */; };
+		481F92132542FA5100914516 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48CF4B2425228BD2006AE8D0 /* IntentHandler.swift */; };
 		482C546A2441EB0A00842CED /* indigo.json in Resources */ = {isa = PBXBuildFile; fileRef = 482C54692441EB0A00842CED /* indigo.json */; };
 		482C546B2441EB0A00842CED /* indigo.json in Resources */ = {isa = PBXBuildFile; fileRef = 482C54692441EB0A00842CED /* indigo.json */; };
 		48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
@@ -615,6 +618,7 @@
 				487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */,
 				48CF4BB32522A710006AE8D0 /* JsonParser.swift in Sources */,
 				487DFB002425539100163D0C /* Utils.swift in Sources */,
+				481F91F32542F92F00914516 /* HueError.swift in Sources */,
 				487DFAF5242552CE00163D0C /* Data.swift in Sources */,
 				487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */,
 				480EDEA42425798C00E8232F /* ContentView.swift in Sources */,
@@ -624,11 +628,13 @@
 				480EDEA32425797200E8232F /* WatchLightList.swift in Sources */,
 				487DFADD2425512B00163D0C /* ExtensionDelegate.swift in Sources */,
 				48E71443252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */,
+				481F92132542FA5100914516 /* IntentHandler.swift in Sources */,
 				487DFB022425539800163D0C /* ValueStore.swift in Sources */,
 				487964A62426C0EB0025B897 /* NotificationName.swift in Sources */,
 				48758DB12427AD8500380126 /* HueDevice.swift in Sources */,
 				487DFAFA242552E300163D0C /* UserData.swift in Sources */,
 				48758DB02427999C00380126 /* NoBridge.swift in Sources */,
+				481F92082542FA0F00914516 /* Intents.intentdefinition in Sources */,
 				487DFAE12425512B00163D0C /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

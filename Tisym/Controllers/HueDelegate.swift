@@ -188,7 +188,7 @@ class HueDelegate: ObservableObject {
     
     func donateIntent() {
         let intent = DimLightIntent()
-        if #available(iOS 14.0, *) {
+        if #available(iOS 14.0, watchOSApplicationExtension 7.0, *) {
             intent.shortcutAvailability = .sleepWrapUpYourDay
         }
         intent.suggestedInvocationPhrase = "Dim the lights"
