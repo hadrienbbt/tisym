@@ -93,12 +93,12 @@ class HueDelegate: ObservableObject {
     }
     
     func setColor(to light: Light, red: Int, green: Int, blue: Int) {
-        let cie = Color.rgbToCie(red, green, blue)
+        let cie = Colors.rgbToCie(red, green, blue)
         setColor(to: light, cie: cie)
     }
     
     func setColor(to light: Light, hex: String) {
-        let cie = Color.hexToCie(hex)
+        let cie = Colors.hexToCie(hex)
         setColor(to: light, cie: cie)
     }
     

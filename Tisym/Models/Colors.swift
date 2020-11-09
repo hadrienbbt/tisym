@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Color {
+class Colors {
     let id: String
     let red: Int
     let green: Int
@@ -21,13 +21,13 @@ class Color {
         self.red = rgb.red
         self.green = rgb.green
         self.blue = rgb.blue
-        self.hex = Color.rgbToHex(rgb)
+        self.hex = Colors.rgbToHex(rgb)
     }
     
     init(hex: ColorHex) {
         self.id = hex.id
         self.hex = hex.hex
-        let rgb = Color.hexToRGB(hex.hex)!
+        let rgb = Colors.hexToRGB(hex.hex)!
         self.red = rgb.red
         self.green = rgb.green
         self.blue = rgb.blue
