@@ -28,7 +28,6 @@
 		48305FF62423DED800F64BB4 /* mockColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF52423DED800F64BB4 /* mockColors.json */; };
 		48305FF82423E1D100F64BB4 /* mockLights.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF72423E1D100F64BB4 /* mockLights.json */; };
 		48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
-		48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FFB242427C100F64BB4 /* SmartPlug.swift */; };
 		48758DAD24277D7F00380126 /* HueDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAC24277D7F00380126 /* HueDevice.swift */; };
 		48758DAF2427999C00380126 /* NoBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAE2427999C00380126 /* NoBridge.swift */; };
 		48758DB02427999C00380126 /* NoBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAE2427999C00380126 /* NoBridge.swift */; };
@@ -50,7 +49,6 @@
 		487DFAE32425512D00163D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAE22425512D00163D0C /* Assets.xcassets */; };
 		487DFAE62425512D00163D0C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 487DFAE52425512D00163D0C /* Preview Assets.xcassets */; };
 		487DFAF5242552CE00163D0C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF32423DEAD00F64BB4 /* Data.swift */; };
-		487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FFB242427C100F64BB4 /* SmartPlug.swift */; };
 		487DFAF9242552DE00163D0C /* Light.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0B24214FBF00B9C272 /* Light.swift */; };
 		487DFAFA242552E300163D0C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
 		487DFAFB242552E700163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
@@ -60,7 +58,6 @@
 		487DFB012425539500163D0C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
 		487DFB022425539800163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
 		487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487EFD562425695F0002DFB0 /* ContextMenu.swift */; };
-		4896ED582548784900171058 /* SmartPlugRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4896ED572548784900171058 /* SmartPlugRow.swift */; };
 		48AD03E42428CB6F002E56CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD03E32428CB6F002E56CA /* Colors.swift */; };
 		48AD03E52428CB6F002E56CA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AD03E32428CB6F002E56CA /* Colors.swift */; };
 		48CF4B1925228B8E006AE8D0 /* Brightness Intent.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 48CF4B1225228B8E006AE8D0 /* Brightness Intent.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -168,7 +165,6 @@
 		48305FF52423DED800F64BB4 /* mockColors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockColors.json; sourceTree = "<group>"; };
 		48305FF72423E1D100F64BB4 /* mockLights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockLights.json; sourceTree = "<group>"; };
 		48305FF92423E2DF00F64BB4 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
-		48305FFB242427C100F64BB4 /* SmartPlug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlug.swift; sourceTree = "<group>"; };
 		48758DAC24277D7F00380126 /* HueDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueDevice.swift; sourceTree = "<group>"; };
 		48758DAE2427999C00380126 /* NoBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBridge.swift; sourceTree = "<group>"; };
 		487964A12426B7E80025B897 /* LigthDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigthDetail.swift; sourceTree = "<group>"; };
@@ -191,7 +187,6 @@
 		487DFAE72425512D00163D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		487DFAE82425512D00163D0C /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		487EFD562425695F0002DFB0 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
-		4896ED572548784900171058 /* SmartPlugRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartPlugRow.swift; sourceTree = "<group>"; };
 		48AD03E32428CB6F002E56CA /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		48CF4B1225228B8E006AE8D0 /* Brightness Intent.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Brightness Intent.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48CF4B1625228B8E006AE8D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -287,7 +282,6 @@
 			children = (
 				48305FEA2423D2E400F64BB4 /* UserData.swift */,
 				4814CF0B24214FBF00B9C272 /* Light.swift */,
-				48305FFB242427C100F64BB4 /* SmartPlug.swift */,
 				48758DAC24277D7F00380126 /* HueDevice.swift */,
 				48CF4B912522A5B9006AE8D0 /* HueError.swift */,
 				48AD03E32428CB6F002E56CA /* Colors.swift */,
@@ -304,7 +298,6 @@
 				487DFABA2424DCBB00163D0C /* LoginHue.swift */,
 				487964A12426B7E80025B897 /* LigthDetail.swift */,
 				48758DAE2427999C00380126 /* NoBridge.swift */,
-				4896ED572548784900171058 /* SmartPlugRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -588,14 +581,12 @@
 				48CF4B4725229261006AE8D0 /* IntentHandler.swift in Sources */,
 				48FD66372422B23800EA2FA4 /* Light.swift in Sources */,
 				4814CF0A24214E1200B9C272 /* Utils.swift in Sources */,
-				4896ED582548784900171058 /* SmartPlugRow.swift in Sources */,
 				48CF4BB22522A710006AE8D0 /* JsonParser.swift in Sources */,
 				48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */,
 				4814CEF424214BA500B9C272 /* AppDelegate.swift in Sources */,
 				487964A22426B7E80025B897 /* LigthDetail.swift in Sources */,
 				4814CF0824214C9700B9C272 /* HueDelegate.swift in Sources */,
 				487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */,
-				48305FFC242427C200F64BB4 /* SmartPlug.swift in Sources */,
 				48CF4B922522A5B9006AE8D0 /* HueError.swift in Sources */,
 				48CF4B4D25229295006AE8D0 /* Intents.intentdefinition in Sources */,
 				48AD03E42428CB6F002E56CA /* Colors.swift in Sources */,
@@ -619,7 +610,6 @@
 				487964A32426B7E80025B897 /* LigthDetail.swift in Sources */,
 				487DFADB2425512B00163D0C /* HostingController.swift in Sources */,
 				487EFD572425695F0002DFB0 /* ContextMenu.swift in Sources */,
-				487DFAF8242552DC00163D0C /* SmartPlug.swift in Sources */,
 				48CF4BB32522A710006AE8D0 /* JsonParser.swift in Sources */,
 				487DFB002425539100163D0C /* Utils.swift in Sources */,
 				481F91F32542F92F00914516 /* HueError.swift in Sources */,

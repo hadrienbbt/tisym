@@ -13,9 +13,9 @@ struct LigthDetail: View {
     @Binding var light: Light
     @State private var animating = false
     @State private var timer: Timer?
-    @State private var currentColor = Color(hex: colorHexData[0])
+    @State private var currentColor = Colors(hex: colorHexData[0])
     
-    let colorRange = colorHexData.map { Color(hex: $0) }
+    let colorRange = colorHexData.map { Colors(hex: $0) }
     
     func addBrightness() {
         self.hueDelegate.setBrightness(to: light, light.brightness! + 20)
@@ -51,7 +51,7 @@ struct LigthDetail: View {
         self.hueDelegate.setColor(to: light, hex: "#ED6C44")
     }
     
-    func getNextColor() -> Color {
+    func getNextColor() -> Colors {
         if let i = colorRange.firstIndex(where: { $0.id == self.currentColor.id }) {
             if i == colorRange.count - 1 {
                 return colorRange[0]

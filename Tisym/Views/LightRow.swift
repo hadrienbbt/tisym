@@ -12,6 +12,18 @@ struct LightRow: View {
     @ObservedObject var hueDelegate: HueDelegate
     @Binding var light: Light
     
+    func red() {
+        self.hueDelegate.setColor(to: light, red: 255, green: 0, blue: 0)
+    }
+    
+    func blue() {
+        self.hueDelegate.setColor(to: light, red: 0, green: 0, blue: 255)
+    }
+    
+    func green() {
+        self.hueDelegate.setColor(to: light, red: 0, green: 255, blue: 0)
+    }
+    
     var body: some View {
         let lightDetails = LigthDetail(
             hueDelegate: hueDelegate,
@@ -19,7 +31,34 @@ struct LightRow: View {
         )
         return NavigationLink(destination: lightDetails) {
             Toggle(isOn: $light.isOn) {
-                Text(light.name)
+                VStack(alignment: .leading, spacing: 10) {
+                    Text(light.name)
+                        .font(.headline)
+                    if light.isBulb() && light.isColor() {
+                        HStack {
+                            Button(action: self.red) {
+                                Circle()
+                                    .fill(Color.red)
+                                    .frame(width: 50, height: 50)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            Button(action: self.blue) {
+                                Circle()
+                                    .fill(Color.blue)
+                                    .frame(width: 50, height: 50)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            Button(action: self.green) {
+                                Circle()
+                                    .fill(Color.green)
+                                    .frame(width: 50, height: 50)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                            
+                        }
+                    }
+                }
+                .padding()
             }
         }
     }
