@@ -28,6 +28,16 @@
 		48305FF62423DED800F64BB4 /* mockColors.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF52423DED800F64BB4 /* mockColors.json */; };
 		48305FF82423E1D100F64BB4 /* mockLights.json in Resources */ = {isa = PBXBuildFile; fileRef = 48305FF72423E1D100F64BB4 /* mockLights.json */; };
 		48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
+		483FCEBD255A08D90021D1C0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEBB255A08D90021D1C0 /* Helpers.swift */; };
+		483FCEBE255A08D90021D1C0 /* ColourStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEBC255A08D90021D1C0 /* ColourStructs.swift */; };
+		483FCECA255A08F50021D1C0 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC4255A08F40021D1C0 /* FinalView.swift */; };
+		483FCECB255A08F50021D1C0 /* CIHueSaturationValueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC5255A08F40021D1C0 /* CIHueSaturationValueGradientView.swift */; };
+		483FCECC255A08F50021D1C0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC6255A08F40021D1C0 /* CustomSlider.swift */; };
+		483FCECD255A08F50021D1C0 /* Experimental in Resources */ = {isa = PBXBuildFile; fileRef = 483FCEC7255A08F40021D1C0 /* Experimental */; };
+		483FCECE255A08F50021D1C0 /* ColourWheel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC8255A08F50021D1C0 /* ColourWheel.swift */; };
+		483FCECF255A08F50021D1C0 /* ColourShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC9255A08F50021D1C0 /* ColourShowView.swift */; };
+		483FCEEE255A100C0021D1C0 /* ColourStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEBC255A08D90021D1C0 /* ColourStructs.swift */; };
+		483FCEF4255A10280021D1C0 /* ColourStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEBC255A08D90021D1C0 /* ColourStructs.swift */; };
 		48758DAD24277D7F00380126 /* HueDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAC24277D7F00380126 /* HueDevice.swift */; };
 		48758DAF2427999C00380126 /* NoBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAE2427999C00380126 /* NoBridge.swift */; };
 		48758DB02427999C00380126 /* NoBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48758DAE2427999C00380126 /* NoBridge.swift */; };
@@ -53,7 +63,6 @@
 		487DFAFA242552E300163D0C /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FEA2423D2E400F64BB4 /* UserData.swift */; };
 		487DFAFB242552E700163D0C /* LoginHue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFABA2424DCBB00163D0C /* LoginHue.swift */; };
 		487DFAFC242552EA00163D0C /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
-		487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0724214C9700B9C272 /* HueDelegate.swift */; };
 		487DFB002425539100163D0C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4814CF0924214E1200B9C272 /* Utils.swift */; };
 		487DFB012425539500163D0C /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DAB2F82424B9DE00C3F073 /* extensions.swift */; };
 		487DFB022425539800163D0C /* ValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 487DFAB62424D7FC00163D0C /* ValueStore.swift */; };
@@ -165,6 +174,14 @@
 		48305FF52423DED800F64BB4 /* mockColors.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockColors.json; sourceTree = "<group>"; };
 		48305FF72423E1D100F64BB4 /* mockLights.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mockLights.json; sourceTree = "<group>"; };
 		48305FF92423E2DF00F64BB4 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
+		483FCEBB255A08D90021D1C0 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		483FCEBC255A08D90021D1C0 /* ColourStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourStructs.swift; sourceTree = "<group>"; };
+		483FCEC4255A08F40021D1C0 /* FinalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
+		483FCEC5255A08F40021D1C0 /* CIHueSaturationValueGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIHueSaturationValueGradientView.swift; sourceTree = "<group>"; };
+		483FCEC6255A08F40021D1C0 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		483FCEC7255A08F40021D1C0 /* Experimental */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Experimental; sourceTree = "<group>"; };
+		483FCEC8255A08F50021D1C0 /* ColourWheel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourWheel.swift; sourceTree = "<group>"; };
+		483FCEC9255A08F50021D1C0 /* ColourShowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourShowView.swift; sourceTree = "<group>"; };
 		48758DAC24277D7F00380126 /* HueDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HueDevice.swift; sourceTree = "<group>"; };
 		48758DAE2427999C00380126 /* NoBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoBridge.swift; sourceTree = "<group>"; };
 		487964A12426B7E80025B897 /* LigthDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LigthDetail.swift; sourceTree = "<group>"; };
@@ -292,6 +309,7 @@
 		48305FEE2423D5EB00F64BB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				483FCEB9255A087D0021D1C0 /* ColorWheel */,
 				4814CEF724214BA500B9C272 /* ContentView.swift */,
 				48305FEC2423D35A00F64BB4 /* LightList.swift */,
 				48305FF92423E2DF00F64BB4 /* LightRow.swift */,
@@ -323,6 +341,29 @@
 				48305FF72423E1D100F64BB4 /* mockLights.json */,
 			);
 			path = Ressources;
+			sourceTree = "<group>";
+		};
+		483FCEB9255A087D0021D1C0 /* ColorWheel */ = {
+			isa = PBXGroup;
+			children = (
+				483FCEC5255A08F40021D1C0 /* CIHueSaturationValueGradientView.swift */,
+				483FCEC9255A08F50021D1C0 /* ColourShowView.swift */,
+				483FCEC8255A08F50021D1C0 /* ColourWheel.swift */,
+				483FCEC6255A08F40021D1C0 /* CustomSlider.swift */,
+				483FCEC7255A08F40021D1C0 /* Experimental */,
+				483FCEC4255A08F40021D1C0 /* FinalView.swift */,
+				483FCEBA255A088D0021D1C0 /* Helpers */,
+			);
+			path = ColorWheel;
+			sourceTree = "<group>";
+		};
+		483FCEBA255A088D0021D1C0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				483FCEBC255A08D90021D1C0 /* ColourStructs.swift */,
+				483FCEBB255A08D90021D1C0 /* Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		487DFAC82425512500163D0C /* Tisym_Watch WatchKit App */ = {
@@ -529,6 +570,7 @@
 				48305FF62423DED800F64BB4 /* mockColors.json in Resources */,
 				4814CEFD24214BAD00B9C272 /* Preview Assets.xcassets in Resources */,
 				48305FF82423E1D100F64BB4 /* mockLights.json in Resources */,
+				483FCECD255A08F50021D1C0 /* Experimental in Resources */,
 				4814CEFA24214BAD00B9C272 /* Assets.xcassets in Resources */,
 				482C546A2441EB0A00842CED /* indigo.json in Resources */,
 			);
@@ -574,28 +616,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483FCECE255A08F50021D1C0 /* ColourWheel.swift in Sources */,
+				483FCEBD255A08D90021D1C0 /* Helpers.swift in Sources */,
 				487DFAB72424D7FC00163D0C /* ValueStore.swift in Sources */,
 				48305FF42423DEAD00F64BB4 /* Data.swift in Sources */,
 				48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */,
 				48758DAF2427999C00380126 /* NoBridge.swift in Sources */,
 				48CF4B4725229261006AE8D0 /* IntentHandler.swift in Sources */,
+				483FCECA255A08F50021D1C0 /* FinalView.swift in Sources */,
 				48FD66372422B23800EA2FA4 /* Light.swift in Sources */,
 				4814CF0A24214E1200B9C272 /* Utils.swift in Sources */,
 				48CF4BB22522A710006AE8D0 /* JsonParser.swift in Sources */,
 				48305FEB2423D2E400F64BB4 /* UserData.swift in Sources */,
+				483FCECF255A08F50021D1C0 /* ColourShowView.swift in Sources */,
 				4814CEF424214BA500B9C272 /* AppDelegate.swift in Sources */,
 				487964A22426B7E80025B897 /* LigthDetail.swift in Sources */,
 				4814CF0824214C9700B9C272 /* HueDelegate.swift in Sources */,
 				487DFABB2424DCBB00163D0C /* LoginHue.swift in Sources */,
 				48CF4B922522A5B9006AE8D0 /* HueError.swift in Sources */,
+				483FCECC255A08F50021D1C0 /* CustomSlider.swift in Sources */,
 				48CF4B4D25229295006AE8D0 /* Intents.intentdefinition in Sources */,
 				48AD03E42428CB6F002E56CA /* Colors.swift in Sources */,
 				48E71442252383B5005B9A2C /* SharedDefaultsMeta.swift in Sources */,
+				483FCECB255A08F50021D1C0 /* CIHueSaturationValueGradientView.swift in Sources */,
 				48758DAD24277D7F00380126 /* HueDevice.swift in Sources */,
 				4814CEF624214BA500B9C272 /* SceneDelegate.swift in Sources */,
 				48305FED2423D35A00F64BB4 /* LightList.swift in Sources */,
 				4814CEF824214BA500B9C272 /* ContentView.swift in Sources */,
 				487964A52426C0EB0025B897 /* NotificationName.swift in Sources */,
+				483FCEBE255A08D90021D1C0 /* ColourStructs.swift in Sources */,
 				48DAB2F92424B9DE00C3F073 /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				487DFAF9242552DE00163D0C /* Light.swift in Sources */,
+				483FCEF4255A10280021D1C0 /* ColourStructs.swift in Sources */,
 				487DFAFB242552E700163D0C /* LoginHue.swift in Sources */,
 				48AD03E52428CB6F002E56CA /* Colors.swift in Sources */,
 				487964A32426B7E80025B897 /* LigthDetail.swift in Sources */,
@@ -614,7 +664,6 @@
 				487DFB002425539100163D0C /* Utils.swift in Sources */,
 				481F91F32542F92F00914516 /* HueError.swift in Sources */,
 				487DFAF5242552CE00163D0C /* Data.swift in Sources */,
-				487DFAFF242552F300163D0C /* HueDelegate.swift in Sources */,
 				480EDEA42425798C00E8232F /* ContentView.swift in Sources */,
 				487DFAFC242552EA00163D0C /* LightRow.swift in Sources */,
 				487DFADF2425512B00163D0C /* NotificationController.swift in Sources */,
@@ -637,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				483FCEEE255A100C0021D1C0 /* ColourStructs.swift in Sources */,
 				48CF4BC52522A7F6006AE8D0 /* Light.swift in Sources */,
 				48CF4B2C25228C4F006AE8D0 /* Intents.intentdefinition in Sources */,
 				48CF4BB42522A710006AE8D0 /* JsonParser.swift in Sources */,

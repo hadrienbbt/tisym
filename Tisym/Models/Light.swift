@@ -18,6 +18,7 @@ struct Light: HueDevice {
     var isReachable: Bool
     var brightness: Int?
     var cieColor: CieColor?
+    var lastUpdate = Date()
     
     init(_ id: String, _ productId: String, _ name: String, _ productName: HueProductName, _ isOn: Bool, _ isReachable: Bool, _ brightness: Int?) {
         self.id = id

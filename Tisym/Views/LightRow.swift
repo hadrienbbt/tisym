@@ -11,6 +11,10 @@ import SwiftUI
 struct LightRow: View {
     @ObservedObject var hueDelegate: HueDelegate
     @Binding var light: Light
+    @State var rgbColour = RGB(r: 0, g: 1, b: 1)
+    @State var brightness: CGFloat = 1
+    
+    var lastUpdate = Date()
     
     func red() {
         self.hueDelegate.setColor(to: light, red: 255, green: 0, blue: 0)
@@ -22,6 +26,16 @@ struct LightRow: View {
     
     func green() {
         self.hueDelegate.setColor(to: light, red: 0, green: 255, blue: 0)
+    }
+    
+    var wheel: some View {
+        ColourWheel(radius: 150, rgbColour: $rgbColour, brightness: $brightness)
+            .padding()
+    }
+    
+    var slider: some View {
+        CustomSlider(rgbColour: $rgbColour, value: $brightness, range: 0.001...1)
+            .padding()
     }
     
     var body: some View {
@@ -56,6 +70,17 @@ struct LightRow: View {
                             .buttonStyle(PlainButtonStyle())
                             
                         }
+                        if #available(iOS 14.0, *) {
+                            wheel.onChange(of: rgbColour) {
+                                self.hueDelegate.setColor(to: light, rgbPercent: $0)
+                            }
+                            slider.onChange(of: brightness) {
+                                self.hueDelegate.setBrightness(to: light, Int($0 * 255))
+                            }
+                        } else {
+                            wheel
+                        }
+                        
                     }
                 }
                 .padding()

@@ -101,6 +101,16 @@ class Colors {
         return CieColor(x: x, y: y)
     }
     
+    static func RGBPercentToRGB(_ rgb: RGB) -> ColorRGB {
+        return ColorRGB(id: UUID.init().description, red: Int(rgb.r * 255), green: Int(rgb.g * 255), blue: Int(rgb.b * 255))
+
+    }
+    
+    static func CieToRGBPercent(_ cie: CieColor) -> RGB {
+        // TODO Implement stub
+        return RGB(r: 0, g: 0, b: 0)
+
+    }
 }
 
 struct ColorRGB: Hashable, Codable, Identifiable {

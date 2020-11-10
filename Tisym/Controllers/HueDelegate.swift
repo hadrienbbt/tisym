@@ -58,37 +58,49 @@ class HueDelegate: ObservableObject {
     }
     
     func setBrightness(to light: Light, _ brightness: Int) {
-        if brightness < 0 {
-            setBrightness(to: light, 0)
-            return
-        }
-        if brightness > 254 {
-            setBrightness(to: light, 254)
-            return
-        }
-        if !light.isOn {
-            sendToLight(light: light, message: ["on": true])
-        }
-        sendToLight(light: light, message: ["bri": brightness]) { result in
-            switch result {
-            case .success(let result): print(result)
-            case .failure(let err): print(HueError(err.localizedDescription))
+        if light.lastUpdate.addingTimeInterval(0.1) < Date() {
+            if brightness < 0 {
+                setBrightness(to: light, 0)
+                return
             }
-        }
-        if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
-            self.lights[i].isOn = true
-            self.lights[i].brightness = brightness
+            if brightness > 254 {
+                setBrightness(to: light, 254)
+                return
+            }
+            if !light.isOn {
+                sendToLight(light: light, message: ["on": true])
+            }
+            sendToLight(light: light, message: ["bri": brightness]) { result in
+                switch result {
+                case .success(let result): print(result)
+                case .failure(let err): print(HueError(err.localizedDescription))
+                }
+            }
+            if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
+                self.lights[i].isOn = true
+                self.lights[i].brightness = brightness
+                self.lights[i].lastUpdate = Date()
+            }
         }
     }
     
+    func setColor(to light: Light, rgbPercent: RGB) {
+        let rgb = Colors.RGBPercentToRGB(rgbPercent)
+        let cie = Colors.rgbToCie(rgb.red, rgb.green, rgb.blue)
+        setColor(to: light, cie: cie)
+    }
+    
     func setColor(to light: Light, cie: CieColor) {
-        if !light.isOn {
-            sendToLight(light: light, message: ["on": true])
-        }
-        sendToLight(light: light, message: ["xy": [cie.x, cie.y]])
-        if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
-            self.lights[i].isOn = true
-            self.lights[i].cieColor = cie
+        if light.lastUpdate.addingTimeInterval(0.1) < Date() {
+            if !light.isOn {
+                sendToLight(light: light, message: ["on": true])
+            }
+            sendToLight(light: light, message: ["xy": [cie.x, cie.y]])
+            if let i = self.lights.firstIndex(where: { $0.id == light.id }) {
+                self.lights[i].isOn = true
+                self.lights[i].cieColor = cie
+                self.lights[i].lastUpdate = Date()
+            }
         }
     }
     
