@@ -29,7 +29,7 @@ struct LightRow: View {
     }
     
     var wheel: some View {
-        ColourWheel(radius: 150, rgbColour: $rgbColour, brightness: $brightness)
+        ColourWheel(radius: 220, rgbColour: $rgbColour, brightness: $brightness)
             .padding()
     }
     
@@ -79,8 +79,17 @@ struct LightRow: View {
                             }
                         } else {
                             wheel
+                            slider
                         }
                         
+                    } else if light.isBulb() {
+                        if #available(iOS 14.0, *) {
+                            slider.onChange(of: brightness) {
+                                self.hueDelegate.setBrightness(to: light, Int($0 * 255))
+                            }
+                        } else {
+                            slider
+                        }
                     }
                 }
                 .padding()
