@@ -15,7 +15,9 @@ struct LightList: View {
         let index = self.hueDelegate.lights.firstIndex(of: light)!
         return LightRow(
             hueDelegate: self.hueDelegate,
-            light: self.$hueDelegate.lights[index]
+            light: self.$hueDelegate.lights[index],
+            rgbColour: Colors.cieToRGBPercent(light.cieColor ?? CieColor(x: 0, y: 0)),
+            brightness: CGFloat(light.brightness ?? 255) / 255
         )
     }
     
@@ -23,7 +25,8 @@ struct LightList: View {
         let index = self.hueDelegate.lights.firstIndex(of: light)!
         return LightRow(
             hueDelegate: self.hueDelegate,
-            light: self.$hueDelegate.lights[index]
+            light: self.$hueDelegate.lights[index],
+            brightness: CGFloat(light.brightness ?? 255) / 255
         )
     }
     

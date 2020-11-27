@@ -106,7 +106,7 @@ class Colors {
 
     }
     
-    static func CieToRGBPercent(_ cie: CieColor) -> RGB {
+    static func cieToRGBPercent(_ cie: CieColor) -> RGB {
         // TODO Implement stub
         return RGB(r: 0, g: 0, b: 0)
 

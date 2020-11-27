@@ -44,11 +44,11 @@ class DimLightIntentHandler: NSObject, DimLightIntentHandling {
     func handle(intent: DimLightIntent, completion: @escaping (DimLightIntentResponse) -> Void) {
         print("handle intent")
         let hueDelegate = HueDelegate()
-        lights
-            .filter { $0.brightness != nil }
-            .forEach {
-                hueDelegate.setBrightness(to: $0, $0.brightness! - 20)
+        lights.forEach {
+            if $0.isOn, let brightness = $0.brightness, brightness > 0 {
+                hueDelegate.setBrightness(to: $0, brightness - 30)
             }
+        }
         
         completion(DimLightIntentResponse(code: .success, userActivity: nil))
     }

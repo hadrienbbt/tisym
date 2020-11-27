@@ -104,7 +104,7 @@ struct LigthDetail: View {
                 Button(action: self.blue) { Text("Blue") }
                 Button(action: self.green) { Text("Green") }
                 Button(action: self.white) { Text("White") }
-                Button(action: self.black) { Text("Black") }
+                //Button(action: self.black) { Text("Black") }
                 Button(action: self.equilab) { Text("Equilab") }
                 Button(action: self.animating ? self.stopAnimation : self.startAnimation) {
                     Text(self.animating ? "Stop animation" : "Start animation")

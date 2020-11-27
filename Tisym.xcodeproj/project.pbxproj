@@ -30,7 +30,6 @@
 		48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48305FF92423E2DF00F64BB4 /* LightRow.swift */; };
 		483FCEBD255A08D90021D1C0 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEBB255A08D90021D1C0 /* Helpers.swift */; };
 		483FCEBE255A08D90021D1C0 /* ColourStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEBC255A08D90021D1C0 /* ColourStructs.swift */; };
-		483FCECA255A08F50021D1C0 /* FinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC4255A08F40021D1C0 /* FinalView.swift */; };
 		483FCECB255A08F50021D1C0 /* CIHueSaturationValueGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC5255A08F40021D1C0 /* CIHueSaturationValueGradientView.swift */; };
 		483FCECC255A08F50021D1C0 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483FCEC6255A08F40021D1C0 /* CustomSlider.swift */; };
 		483FCECD255A08F50021D1C0 /* Experimental in Resources */ = {isa = PBXBuildFile; fileRef = 483FCEC7255A08F40021D1C0 /* Experimental */; };
@@ -176,7 +175,6 @@
 		48305FF92423E2DF00F64BB4 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
 		483FCEBB255A08D90021D1C0 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		483FCEBC255A08D90021D1C0 /* ColourStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColourStructs.swift; sourceTree = "<group>"; };
-		483FCEC4255A08F40021D1C0 /* FinalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalView.swift; sourceTree = "<group>"; };
 		483FCEC5255A08F40021D1C0 /* CIHueSaturationValueGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIHueSaturationValueGradientView.swift; sourceTree = "<group>"; };
 		483FCEC6255A08F40021D1C0 /* CustomSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		483FCEC7255A08F40021D1C0 /* Experimental */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Experimental; sourceTree = "<group>"; };
@@ -351,7 +349,6 @@
 				483FCEC8255A08F50021D1C0 /* ColourWheel.swift */,
 				483FCEC6255A08F40021D1C0 /* CustomSlider.swift */,
 				483FCEC7255A08F40021D1C0 /* Experimental */,
-				483FCEC4255A08F40021D1C0 /* FinalView.swift */,
 				483FCEBA255A088D0021D1C0 /* Helpers */,
 			);
 			path = ColorWheel;
@@ -623,7 +620,6 @@
 				48305FFA2423E2DF00F64BB4 /* LightRow.swift in Sources */,
 				48758DAF2427999C00380126 /* NoBridge.swift in Sources */,
 				48CF4B4725229261006AE8D0 /* IntentHandler.swift in Sources */,
-				483FCECA255A08F50021D1C0 /* FinalView.swift in Sources */,
 				48FD66372422B23800EA2FA4 /* Light.swift in Sources */,
 				4814CF0A24214E1200B9C272 /* Utils.swift in Sources */,
 				48CF4BB22522A710006AE8D0 /* JsonParser.swift in Sources */,
