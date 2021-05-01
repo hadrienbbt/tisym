@@ -15,6 +15,19 @@ struct LigthDetail: View {
     @State private var timer: Timer?
     @State private var currentColor = Colors(hex: colorHexData[0])
     
+    @State var rgbColour = RGB(r: 0, g: 1, b: 1)
+    @State var brightness: CGFloat = 1
+    
+    var wheel: some View {
+        ColourWheel(radius: 220, rgbColour: $rgbColour, brightness: $brightness)
+            .padding()
+    }
+    
+    var slider: some View {
+        CustomSlider(rgbColour: $rgbColour, value: $brightness, range: 0.001...1)
+            .padding()
+    }
+    
     let colorRange = colorHexData.map { Colors(hex: $0) }
     
     func addBrightness() {
@@ -109,15 +122,32 @@ struct LigthDetail: View {
                 Button(action: self.animating ? self.stopAnimation : self.startAnimation) {
                     Text(self.animating ? "Stop animation" : "Start animation")
                 }
+                if #available(iOS 14.0, *) {
+                    wheel.onChange(of: rgbColour) {
+                        self.hueDelegate.setColor(to: light, rgbPercent: $0)
+                    }
+                    /*
+                    slider.onChange(of: brightness) {
+                        self.hueDelegate.setBrightness(to: light, Int($0 * 255))
+                    }
+                    */
+                } else {
+                    wheel
+                    // slider
+                }
+            } else if light.isBulb() {
+                /*
+                if #available(iOS 14.0, *) {
+                    slider.onChange(of: brightness) {
+                        self.hueDelegate.setBrightness(to: light, Int($0 * 255))
+                    }
+                } else {
+                    slider
+                }
+                */
             }
         }
         .navigationBarTitle(Text(light.name))
         .onDisappear(perform: self.stopAnimation)
-    }
-}
-
-struct LigthDetail_Previews: PreviewProvider {
-    static var previews: some View {
-        LigthDetail(hueDelegate: HueDelegate(), light: .constant(lightData[0]))
     }
 }
