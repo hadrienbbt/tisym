@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.barbat.hadrien.Tisym</string>
+		<string>group.fr.fedutia.tisym</string>
 	</array>
 </dict>
 </plist>

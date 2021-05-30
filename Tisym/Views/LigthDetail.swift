@@ -18,8 +18,10 @@ struct LigthDetail: View {
     @State var rgbColour = RGB(r: 0, g: 1, b: 1)
     @State var brightness: CGFloat = 1
     
+    @State var wheelBrightness: CGFloat = 255
+    
     var wheel: some View {
-        ColourWheel(radius: 220, rgbColour: $rgbColour, brightness: $brightness)
+        ColourWheel(radius: 220, rgbColour: $rgbColour, brightness: $wheelBrightness)
             .padding()
     }
     
@@ -94,57 +96,61 @@ struct LigthDetail: View {
             Toggle(isOn: $light.isOn) {
                 Text(light.name)
             }
-            if light.isBulb() {
-                #if os(watchOS)
-                HStack {
-                    Text("Brightness")
-                    Spacer()
-                    Button(action: self.reduceBrightness) {
-                        Image(systemName: "minus")
-                    }
-                    Button(action: self.addBrightness) {
-                        Image(systemName: "plus")
-                    }
-                }
-                #else
-                    Stepper(onIncrement: self.addBrightness, onDecrement: self.reduceBrightness) {
+            if light.isOn {
+                if light.isBulb() {
+                    #if os(watchOS)
+                    HStack {
                         Text("Brightness")
+                        Spacer()
+                        Button(action: self.reduceBrightness) {
+                            Image(systemName: "minus")
+                        }
+                        Button(action: self.addBrightness) {
+                            Image(systemName: "plus")
+                        }
                     }
-                #endif
-            }
-            if light.isColor() {
-                Button(action: self.red) { Text("Red") }
-                Button(action: self.blue) { Text("Blue") }
-                Button(action: self.green) { Text("Green") }
-                Button(action: self.white) { Text("White") }
-                //Button(action: self.black) { Text("Black") }
-                Button(action: self.equilab) { Text("Equilab") }
-                Button(action: self.animating ? self.stopAnimation : self.startAnimation) {
-                    Text(self.animating ? "Stop animation" : "Start animation")
+                    #else
+                        Stepper(onIncrement: self.addBrightness, onDecrement: self.reduceBrightness) {
+                            Text("Brightness")
+                        }
+                    #endif
                 }
-                if #available(iOS 14.0, *) {
-                    wheel.onChange(of: rgbColour) {
-                        self.hueDelegate.setColor(to: light, rgbPercent: $0)
+                if light.isColor() {
+    /*
+                    Button(action: self.red) { Text("Red") }
+                    Button(action: self.blue) { Text("Blue") }
+                    Button(action: self.green) { Text("Green") }
+                    Button(action: self.white) { Text("White") }
+                    Button(action: self.black) { Text("Black") }
+                    Button(action: self.equilab) { Text("Equilab") }
+     */
+                    Button(action: self.animating ? self.stopAnimation : self.startAnimation) {
+                        Text(self.animating ? "Stop animation" : "Start animation")
                     }
+                    if #available(iOS 14.0, *) {
+                        wheel.onChange(of: rgbColour) {
+                            self.hueDelegate.setColor(to: light, rgbPercent: $0)
+                        }
+                        /*
+                        slider.onChange(of: brightness) {
+                            self.hueDelegate.setBrightness(to: light, Int($0 * 255))
+                        }
+                        */
+                    } else {
+                        wheel
+                        // slider
+                    }
+                } else if light.isBulb() {
                     /*
-                    slider.onChange(of: brightness) {
-                        self.hueDelegate.setBrightness(to: light, Int($0 * 255))
+                    if #available(iOS 14.0, *) {
+                        slider.onChange(of: brightness) {
+                            self.hueDelegate.setBrightness(to: light, Int($0 * 255))
+                        }
+                    } else {
+                        slider
                     }
                     */
-                } else {
-                    wheel
-                    // slider
                 }
-            } else if light.isBulb() {
-                /*
-                if #available(iOS 14.0, *) {
-                    slider.onChange(of: brightness) {
-                        self.hueDelegate.setBrightness(to: light, Int($0 * 255))
-                    }
-                } else {
-                    slider
-                }
-                */
             }
         }
         .navigationBarTitle(Text(light.name))

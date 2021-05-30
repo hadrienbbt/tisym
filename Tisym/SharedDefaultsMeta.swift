@@ -10,7 +10,7 @@ import Foundation
 
 class SharedDefaultsMeta {
     
-    private var defaults = UserDefaults(suiteName: "group.barbat.hadrien.Tisym")!
+    private var defaults = UserDefaults(suiteName: "group.fr.fedutia.tisym")!
     
     var lights: [Light] {
         get {
